@@ -1,7 +1,7 @@
 
 header {
     background-color: #c8102e;
-    border: #ffffff 2px solid;
+    border: #ffffff 10px solid;
     color: #ffffff;
     padding: 10px;
     margin: 10px auto;
@@ -9,13 +9,18 @@ header {
     font-size: 2em;
     font-family: 'Battambang', cursive;
     width: 90%;
+    border-radius: 0.1em;
 }
 
 span {
     font-family: 'Satisfy', cursive;
+    color: transparent;
+    
+    font-size: 1.3em;
+    -webkit-text-stroke: 0.1px #fff;
 }
 
-body{
+body {
     background-color: #1d428a;
     color:#ffffff;
     font-family: sans-serif;
@@ -39,7 +44,7 @@ th {
 }
 
 td {
-    padding: 1em 0 0 0;
+    padding: 1em 0 0 0; 
 }
 
 .home {
