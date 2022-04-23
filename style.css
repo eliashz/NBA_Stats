@@ -4,54 +4,95 @@
     padding: 0;
 }
 
-.flex-container {
-    display: flex;
-    background-color: antiquewhite;
-   /*      justify-content: space-around;
-    align-items: start; */
-    font-size: 1.5em;
+body {
+    font-family: sans-serif;
+    background: #1d428a;
+    color:#ffffff;
+    font-size: 16p;
+    line-height: 1.5;
+    
+}
+
+img {
+    max-width: 100%;
+}
+
+h1, h2 {
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.navbar {
+    background: #c8102e;
     font-family: 'Battambang', cursive;
+    height: 60px;
 }
 
-.item {
+.navbar .logo {
+    font-size: x-large;
+    font-weight: bold;
+}
 
-    flex: 1;
-    height: 100px;
-    background-color: #c8102e;
+.navbar a {
     color: #fff;
-    margin: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+} 
+
+.header {
+    color: #fff;
+    min-height: 400px;
+}
+
+.header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.header img {
+    max-width: 600px;
+    padding-top: 10px;
+}
+
+.header .container {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: space-between;
 }
 
-.item:nth-of-type(1){
-/*     flex-shrink: 1;
-    flex-grow: 1; */
-}
-
-.item:nth-of-type(2){
-/*     flex-shrink: 3;
-    flex-grow: 3; */
-}
-
-.item:nth-of-type(3){
-/*     flex-shrink: 2;
-    flex-grow: 2; */
-}
-
-header {
-    background-color: #c8102e;
-    border-collapse: collapse;
-
-    width: 90%;
-    border-radius: 0.1em;
-    margin: 20px auto;
-    padding: 0 100px;
+.boxe .container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+}
 
+.navbar a:hover{
+    color:#fffd
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   /*  height: 160%; */
+} 
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar ul li {
+    margin-left: 10px;
 }
 
 span {
@@ -59,18 +100,6 @@ span {
     color: transparent;
     font-size: 1.3em;
     -webkit-text-stroke: 0.1px #fff;
-}
-
-nav {
-    width: 80%;
-    margin: 10px auto;
-}
-
-body {
-    background-color: #1d428a;
-    color:#ffffff;
-    font-family: sans-serif;
-    font-weight: 100;
 }
 
 table {
@@ -130,5 +159,18 @@ a:visited {
 }
 
 a:hover {
-    color: #fffa;
+    color: #fffc;
+}
+
+@media(max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        padding-top: 20px;
+        text-align: center;
+    }
+
+    .boxes .container {
+        display: block;
+        text-align: center;
+    }
 }
