@@ -159,7 +159,7 @@ a:visited {
 }
 
 a:hover {
-    color: #fffc;
+    color: #1d428ac;
 }
 
 @media(max-width: 768px) {
