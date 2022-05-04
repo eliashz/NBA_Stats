@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background: #5D76A9;
+    color: #12173F;
+    font-size: 16p;
+    line-height: 1.5;
+    
+}
+
+img {
+    max-width: 100%;
+}
+
+h1, h2 {
+    margin-bottom: 15px;
+    
+}
+
+ul {
+    list-style-type: none;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.navbar {
+    background: #F5B112;
+    font-family: 'Battambang', cursive;
+    height: 85px;
+    border-bottom: #12173F 15px solid;
+    
+}
+
+.navbar .logo {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.navbar a {
+        text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+} 
+
+.header {
+    color: #12173F;
+    min-height: 400px;
+    
+}
+
+.header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.header img {
+    max-width: 600px;
+    padding-top: 10px;
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.boxes .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar a:hover{
+    color:#12173Fd
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   /*  height: 160%; */
+} 
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar ul li {
+    margin-left: 10px;
+}
+
+span {
+    font-family: 'Satisfy', cursive;
+    color: transparent;
+    font-size: 1.3em;
+    -webkit-text-stroke: 0.1px #12173F;
+}
+
+
+
+footer {
+    text-align: center;
+    font-size: 0.7em;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+a {
+    color: #12173F;
+}
+
+a:visited {
+    color: #12173F;
+}
+
+a:hover {
+    color: #12173F;
+}
+
+@media(max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        padding-top: 20px;
+        text-align: center;
+    }
+
+    .boxes .container {
+        display: block;
+        text-align: center;
+    }
+}
