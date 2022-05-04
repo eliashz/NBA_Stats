@@ -11,3 +11,7 @@ Más adelante, se ha empezado a trabajar con Flexbox para optimizar el diseño d
 ![Segundo diseño](/markdown/segundodiseno.png "Segundo diseño")  
 
 El siguiente paso, ha sido empezar a elaborar los estilos por equipos. En la medida de lo posible, la idea es crear unos estilos css para cada equipo de la NBA, para que cuando se realice una búsqueda por jugador o por equipo salgan los colores de cada equipo. Se implementará con la ayuda de la página [Sports Fan Covers](https://sportsfancovers.com/nba-team-colors/), para la correcta selección de los colores de cada equipo. Al ser 30 equipos no sé si será factible llevar a cabo esta tarea o requerirá de un tiempo desproporcionado.
+
+Con lo explicado en la *Sesión Síncrona 6*, se ha implementado un primer diseño de como sería una página de un equipo selecionado:
+
+![Diseño equipo](/markdown/disenomem.png "Diseño equipo")  
