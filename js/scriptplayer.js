@@ -15,8 +15,6 @@ function addTitle(textContent, css, tr){ //TODO optimizar funcion
     tr.appendChild(th);
 }
 function getGames() {
-    
-    
     /* fetch("https://www.balldontlie.io/api/v1/games") */
     fetch("games.json")
         .then(response => response.json())

@@ -94,7 +94,7 @@ footer p {
     font-weight: 300;
     text-align: center;
 }
-
+/* Player */
 div.players {
     display: flex;
     justify-content: center;
@@ -102,7 +102,6 @@ div.players {
     flex-wrap: wrap;
     margin-top: 50px;
 }
-
 
 div.player {
     width: 250px;
@@ -115,7 +114,6 @@ div.player {
     gap: 10px;
     align-items: center;
 }
-
 
 .name {
     font-size: 1.75em; 
@@ -135,6 +133,28 @@ div.player {
     padding: 5px 15px;
     border-radius: 5%;
 }
+/* Teanm */
+div.teams {
+    display: flex;
+    justify-content: center;
+    gap: 130px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+div.team {
+    width: 250px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+table {
+    font-family: sans-serif;
+    text-align: center;
+}
 
 a {
     color: #12173F;
@@ -147,8 +167,6 @@ a:visited {
 a:hover {
     color: #12173F;
 }
-
-
 
 @media(max-width: 768px) {
     .header .container {
