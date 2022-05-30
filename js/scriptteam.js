@@ -2,6 +2,24 @@ import { fetchData } from "../modules/fetchData.js";
 
 const teamID = localStorage.getItem('teamID');
 
-//const dataTeam = await fetchData(`https://www.balldontlie.io/api/v1/teams/${teamID}`);
+const dataTeam = await fetchData(`https://www.balldontlie.io/api/v1/teams/${teamID}`);
 
 //console.log(dataTeam)
+
+const fragment = document.createDocumentFragment();
+const template = document.querySelector('#template-team').content;
+
+const teamDiv = template.cloneNode(true);
+
+teamDiv.querySelector('img').src += `${teamID}.png`; //Insercion de la imagen del logo
+teamDiv.querySelector('img').alt = dataTeam.name;
+
+teamDiv.querySelector('.name').textContent = `${dataTeam.conference} Conference`; 
+teamDiv.querySelector('.position').textContent = `${dataTeam.division} Division`; 
+teamDiv.querySelector('.number').textContent = `City of ${dataTeam.city}`; 
+
+fragment.appendChild(teamDiv);
+
+
+const teamsDiv = document.querySelector('header');
+teamsDiv.appendChild(fragment);
