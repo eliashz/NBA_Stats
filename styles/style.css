@@ -154,6 +154,24 @@ footer {
 
 }
 
+
+/* Teams */
+
+.shields {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.shield {
+    text-align: center;
+    padding: 0;
+    margin: 0 10%;
+}
+
+.shield img {
+    height: 100px;
+}
+
 a {
     color: #fff;
 }
