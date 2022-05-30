@@ -27,12 +27,16 @@ addShields(shieldsEast, '.shield-east');
 addShields(shieldsWest, '.shield-west');
 
 const saveTeam = (e) => {
-    if (e.target.classList.contains('div.shield')){
-        console.log(e)
+    if (e.target.classList.contains('img')){
+        let id = e.target.src.slice(-6, -4);
+        if (id.indexOf('/') != -1){
+            id = id.slice(1)
+            
+        }
+        console.log(id)
 
     }
 }    
 
-document.querySelector('.shield-east').addEventListener('click', saveTeam);
-document.querySelector('.shield-west').addEventListener('click', saveTeam);
+document.querySelector('.shields').addEventListener('click', saveTeam);
 
