@@ -54,7 +54,6 @@ ul {
 .header {
     color: #fff;
     min-height: 400px;
-    
 }
 
 .header h1 {
@@ -72,7 +71,6 @@ ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
 }
 
 .boxes .container {
@@ -157,17 +155,16 @@ footer {
 
 /* Teams */
 
-.shield-west {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    margin: 10px 10px;
-    user-select: none;
-}
-
 .shield-east {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    margin: 10px 10px;
+    user-select: none;
+
+}
+
+.shield-west {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     user-select: none;
 }
 
