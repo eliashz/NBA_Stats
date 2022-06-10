@@ -15,3 +15,5 @@ El siguiente paso, ha sido empezar a elaborar los estilos por equipos. En la med
 Con lo explicado en la *Sesión Síncrona 6*, se ha implementado un primer diseño de como sería una página de un equipo selecionado:
 
 ![Diseño equipo](/markdown/disenomem.png "Diseño equipo")  
+
+Después de un tiempo sin avanzar el proyecto, he decidido reemprenderlo realizando una página con todos los logos de los equipos NBA, divididos por conferencias. Una vez pinchando en el logo de un equipo, la idea era generar una tabla con los jugadores de ese equipo buscando en la API. Entonces ha surgido un problema, que habrá que evaluar para encontrar una posible solución o descartar la idea. Ya que la URL de jugadores está divida en 151 páginas con 25 jugadores por lo que las llamadas a la API con los awaits correspondientes retrasan demasiado la ejecución. Además, que la API solo permite 60 llamas al minuto, por lo que se me ha bloqueado. 
