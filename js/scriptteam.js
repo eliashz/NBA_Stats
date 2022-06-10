@@ -1,4 +1,5 @@
 import { fetchData } from "../modules/fetchData.js";
+import { inchesToCm, poundsToKg } from "../modules/weightHeight.js";
 
 const teamID = localStorage.getItem('teamID');
 
@@ -32,12 +33,11 @@ console.log(teamPlayers)
 
 const tbody = document.querySelector('tbody');
 
+let print=true; 
 const showPlayerInfo = (content, tr) => {
-    if (content==null) {
-        content = '-';
-    }
     const td = document.createElement('td');
     td.textContent = content;
+    if (print===false) tr.classList.add('colorTable')
     tr.appendChild(td);
     tbody.appendChild(tr);
 }
@@ -46,8 +46,8 @@ teamPlayers.map(teamPlayer => {
     const tr = document.createElement('tr');
     showPlayerInfo(teamPlayer.first_name + ' ' + teamPlayer.last_name, tr);
     showPlayerInfo(teamPlayer.position, tr);
-    showPlayerInfo(`${teamPlayer.height_feet}'${teamPlayer.height_inches}"`, tr)
-    showPlayerInfo(teamPlayer.weight_pounds, tr)
+    showPlayerInfo(inchesToCm(teamPlayer.height_feet, teamPlayer.height_inches), tr)
+    showPlayerInfo(poundsToKg(teamPlayer.weight_pounds), tr)
+    print = !print;
 })
 
-console.log(teamPlayers[0].weight_pounds)

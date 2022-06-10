@@ -6,12 +6,12 @@
 
 const poundsToKg = (weight) => {
     if (weight === null) {return '-'};
-    return parseInt(weight * 0.453592);
+    return parseInt(weight * 0.453592) + ' kg';
 }
 
 const inchesToCm = (feet, inch) => {
     if (feet === null) {return '-'};
-    return parseInt(feet * 30.48 + inch * 2.54);
+    return parseInt(feet * 30.48 + inch * 2.54) + ' cm';
 }
 
 export { poundsToKg, inchesToCm}
