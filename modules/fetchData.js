@@ -2,7 +2,7 @@ export async function fetchData(url) {
     let page = 1;
     let results = [];
     do {
-        let url2 = url + `?page=${page}`;
+        let url2 = url + `?page=${page}?per_page=100`;
         const response = await fetch(url2);
         if (!response.ok) {
             console.log("Error");
