@@ -1,4 +1,4 @@
-import {fetchData} from "../modules/fetchData.js";
+;import {fetchData} from "../modules/fetchData.js";
 import { inchesToCm, poundsToKg } from "../modules/weightHeight.js";
 
 const teamID = localStorage.getItem('teamID');
@@ -36,10 +36,19 @@ console.log(teamPlayers)
 const tbody = document.querySelector('tbody');
 
 let print=true; 
+let enlace=true;
 const showPlayerInfo = (content, tr) => {
     const td = document.createElement('td');
-    td.textContent = content;
-    if (print===false) tr.classList.add('colorTable')
+    if (enlace) {
+        const a = document.createElement('a');
+        a.setAttribute('href', '/player.html');
+        td.appendChild(a);
+        a.textContent = content;
+        enlace = false;
+    } else {
+        td.textContent = content;
+    }
+    if (print===false) tr.classList.add('colorTable') //Pinta un fila si y otra no con la clase.
     tr.appendChild(td);
     tbody.appendChild(tr);
 }
@@ -51,5 +60,6 @@ teamPlayers.map(teamPlayer => {
     showPlayerInfo(inchesToCm(teamPlayer.height_feet, teamPlayer.height_inches), tr)
     showPlayerInfo(poundsToKg(teamPlayer.weight_pounds), tr)
     print = !print;
+    enlace = true;
 })
 

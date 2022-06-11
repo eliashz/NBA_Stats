@@ -212,10 +212,11 @@ th, td {
 
 a {
     color: #ffffff;
+    text-decoration: none;
 }
 
 a:hover {
-    color: #ffffffdd;
+    color: #ffffffcc;
 }
 
 button:hover {
