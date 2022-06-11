@@ -6,14 +6,43 @@
 
 body {
     font-family: sans-serif;
-    background: #5D76A9;
-    color: #12173F;
+    background: #1d428a;
+    color: #ffffff;
     font-size: 16p;
     line-height: 1.5;
 }
 
 header{
     font-family: 'Battambang', cursive;
+}
+
+.buscador {
+    width: 50%;
+    margin: 2em auto 0 auto;
+    text-align: center;
+}
+
+.buscador input  {
+    color: #ffffff;
+    background: #1d428a;
+    border: 1px solid #ffffff;
+    padding: 5px 50px 5px 5px;
+    outline: none;
+}
+
+.buscador button {
+    color: #ffffff;
+    background: #1d428a;
+    border: 1px solid #ffffff;
+    padding: 5px 15px;
+    font-size: 0.9em;
+    font-weight: 100;
+}
+
+input::placeholder {
+    color: #ffffff;
+    font-size: 0.9em;
+    font-weight: 100;
 }
 
 img {
@@ -39,10 +68,10 @@ ul {
 }
 
 .navbar {
-    background: #F5B112;
+    background: #c8102e;
     font-family: 'Battambang', cursive;
     height: 85px;
-    border-bottom: #12173F 15px solid;
+    border-bottom: #ffffff 15px solid;
     
 }
 
@@ -75,7 +104,7 @@ ul {
     font-family: 'Satisfy', cursive;
     color: transparent;
     font-size: 1.3em;
-    -webkit-text-stroke: 0.1px #12173F;
+    -webkit-text-stroke: 0.1px #ffffff;
 }
 
 footer {
@@ -85,7 +114,7 @@ footer {
 
 footer p {
     padding-top: 10px;
-    border-top: #12173F solid 1px;
+    border-top: #ffffff solid 1px;
     font-weight: 300;
     text-align: center;
 }
@@ -102,7 +131,7 @@ div.players {
 div.player {
     width: 250px;
     color: #5D76A9;
-    background-color: #12173F;
+    background-color: #ffffff;
     border-radius: 5%;
     padding: 20px;
     display: flex;
@@ -124,8 +153,8 @@ div.player {
 
 .number {
     font-size: 1em;
-    color: #12173F;
-    background-color: #5D76A9;
+    color: #ffffff;
+    background-color: #1d428a;
     padding: 5px 15px;
     border-radius: 5%;
 }
@@ -164,7 +193,7 @@ table {
 }
 
 thead {
-    background-color: #12173F;
+    background-color: #ffffff;
     color:#5D76A9;
     font-family: 'Battambang', cursive;
     font-size: 0.9em;
@@ -174,27 +203,24 @@ thead {
 th, td {
     padding: 2px 20px;
     font-size: 0.8em;
-    
-    
 }
 
 .colorTable {
-    background-color: #12173F22;
+    background-color: #ffffffee;
 }
 
 
 a {
-    color: #12173F;
-}
-
-a:visited {
-    color: #12173F;
+    color: #ffffff;
 }
 
 a:hover {
-    color: #12173F;
+    color: #ffffffdd;
 }
 
+button:hover {
+    color: #ffffffdd;
+}
 @media(max-width: 768px) {
     .header .container {
         flex-direction: column;

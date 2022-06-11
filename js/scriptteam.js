@@ -26,9 +26,9 @@ const showTeamInfo = () => {
     const teamsDiv = document.querySelector('header');
     teamsDiv.appendChild(fragment);
 }
-//showTeamInfo()
+showTeamInfo()
 
-const allPlayers = await fetchData(`https://www.balldontlie.io/api/v1/players`);
+//const allPlayers = await fetchData(`https://www.balldontlie.io/api/v1/players`);
 
 const teamPlayers = allPlayers.filter(player => player.team.id == teamID);
 
