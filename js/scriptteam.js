@@ -7,7 +7,7 @@ const teamID = localStorage.getItem('teamID');
 const dataTeam = await fetchData(`https://www.balldontlie.io/api/v1/teams/`);
 
 const team = dataTeam.data.filter(team => team.id == teamID);
-console.log(team)
+//console.log(team)
 
 const showTeamInfo = () => {
     const fragment = document.createDocumentFragment();
@@ -32,7 +32,7 @@ showTeamInfo()
 
 const allPlayers = await fetchDataPages(`https://www.balldontlie.io/api/v1/players`);
 const teamPlayers = allPlayers.filter(player => player.team.id == teamID);
-console.log(teamPlayers)
+//console.log(teamPlayers)
 
 const tbody = document.querySelector('tbody');
 
@@ -64,3 +64,17 @@ teamPlayers.map(teamPlayer => {
     enlace = true;
 })
 
+/**
+ * Al seleccionar un jugador de la tabla, guardamos en localStorage el nombre
+ * para que al redirigir a la página de jugadores se imprima éste jugador.
+ *  
+ */
+const selectPlayer = (e) => {
+    localStoragesetItem('playerFromList', e.target.textContent);
+}
+
+const aa = document.querySelectorAll('table a')
+
+for (const a of aa) {
+    a.addEventListener('click', selectPlayer);
+}

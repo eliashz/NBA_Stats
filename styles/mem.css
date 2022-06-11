@@ -12,9 +12,9 @@ body {
     line-height: 1.5;
 }
 
-header{
+/* header{
     font-family: 'Battambang', cursive;
-}
+} */
 
 .buscador {
     width: 50%;
@@ -181,8 +181,15 @@ div.team {
     text-transform: uppercase;
     font-size: 2.5em;
 }
-.results {
-    
+/* Player */
+#result {
+    width: 40%;
+    margin: 1em auto 0 auto;
+    text-align: center;
+}
+
+.playerName {
+    cursor: pointer;
 }
 /* Players table */
 table {

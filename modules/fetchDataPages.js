@@ -11,6 +11,6 @@ export async function fetchDataPages(url) {
         const data = await response.json();
         page++
         results.push(...data.data);
-    } while (page < 10)
+    } while (page < 2)
     return results;
 }
