@@ -1,11 +1,12 @@
-import { fetchData } from "../modules/fetchData.js";
+import {fetchData} from "../modules/fetchData.js";
 import { inchesToCm, poundsToKg } from "../modules/weightHeight.js";
 
 const teamID = localStorage.getItem('teamID');
 
-/* const dataTeam = await fetchData(`https://www.balldontlie.io/api/v1/teams/`);
+const dataTeam = await fetchData(`https://www.balldontlie.io/api/v1/teams/`);
 
-const team = dataTeam.data.filter(team => team.id == teamID); */
+const team = dataTeam.filter(team => team.id == teamID);
+console.log(team)
 
 const showTeamInfo = () => {
     const fragment = document.createDocumentFragment();
@@ -28,9 +29,9 @@ const showTeamInfo = () => {
 }
 showTeamInfo()
 
-//const allPlayers = await fetchData(`https://www.balldontlie.io/api/v1/players`);
-
+const allPlayers = await fetchData(`https://www.balldontlie.io/api/v1/players`);
 const teamPlayers = allPlayers.filter(player => player.team.id == teamID);
+console.log(teamPlayers)
 
 const tbody = document.querySelector('tbody');
 

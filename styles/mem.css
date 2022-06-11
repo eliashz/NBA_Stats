@@ -187,7 +187,7 @@ table {
     font-family: sans-serif;
     text-align: center;
     border-collapse: collapse;
-    width: 80%;
+    width: 40%;
     margin: 50px auto;
     
 }
@@ -206,7 +206,7 @@ th, td {
 }
 
 .colorTable {
-    background-color: #ffffffee;
+    background-color: #ffffff22;
 }
 
 
@@ -219,8 +219,10 @@ a:hover {
 }
 
 button:hover {
-    color: #ffffffdd;
+    color: #ffffffcc;
+    border: 1px solid #ffffffcc;
 }
+
 @media(max-width: 768px) {
     .header .container {
         flex-direction: column;
