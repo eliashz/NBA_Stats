@@ -1,11 +1,12 @@
 ;import {fetchData} from "../modules/fetchData.js";
+;import {fetchDataPages} from "../modules/fetchDataPages.js";
 import { inchesToCm, poundsToKg } from "../modules/weightHeight.js";
 
 const teamID = localStorage.getItem('teamID');
 
 const dataTeam = await fetchData(`https://www.balldontlie.io/api/v1/teams/`);
 
-const team = dataTeam.filter(team => team.id == teamID);
+const team = dataTeam.data.filter(team => team.id == teamID);
 console.log(team)
 
 const showTeamInfo = () => {
@@ -29,7 +30,7 @@ const showTeamInfo = () => {
 }
 showTeamInfo()
 
-const allPlayers = await fetchData(`https://www.balldontlie.io/api/v1/players`);
+const allPlayers = await fetchDataPages(`https://www.balldontlie.io/api/v1/players`);
 const teamPlayers = allPlayers.filter(player => player.team.id == teamID);
 console.log(teamPlayers)
 
@@ -39,7 +40,7 @@ let print=true;
 let enlace=true;
 const showPlayerInfo = (content, tr) => {
     const td = document.createElement('td');
-    if (enlace) {
+    if (enlace) { //Para que el lace solo salga en la primera columna. 
         const a = document.createElement('a');
         a.setAttribute('href', '/player.html');
         td.appendChild(a);
