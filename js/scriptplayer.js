@@ -1,4 +1,3 @@
-
 const player = document.querySelector('#text');
 const boton = document.querySelector('#boton');
 const result = document.querySelector('#result');
@@ -13,14 +12,16 @@ async function fetchData(url) {
     return data;
 } 
 
-const search = async () => {
-    const playerData = await fetchData(`https://www.balldontlie.io/api/v1/players?search=${player.value}`)
+const searchPlayer = async (playerName) => {
+    playerName ? '' : playerName = player.value;
+
+    const playerData = await fetchData(`https://www.balldontlie.io/api/v1/players?search=${playerName}`)
     
     if (playerData.data.length == 0) {
         result.textContent = 'Jugador no encontrado.'
     } else if (playerData.data.length === 1) {
         result.textContent = `${playerData.data[0].first_name} ${playerData.data[0].last_name}` ;
-    } else if (player.value) {
+    } else if (player) {
         result.textContent = '';
         playerData.data.map(player => {
             const div = document.createElement('div');
@@ -37,9 +38,21 @@ const search = async () => {
     player.value = '';
 }
 
-boton.addEventListener('click', search);
+const playerFromTeamList = localStorage.getItem('playerFromList');
+
+if (playerFromTeamList) {
+    searchPlayer(playerFromTeamList)
+    localStorage.removeItem('playerFromList');
+}
+
+const pressEnter = (e) => {
+    if ((e.keyCode === 13) &&  (player.value !== '')){
+        searchPlayer();
+    }
+}
+boton.addEventListener('click', searchPlayer);
+document.body.addEventListener('keydown', pressEnter);
 
 const selectPlayer = (e) => {
     console.log(e.target.textContent)
 }
-

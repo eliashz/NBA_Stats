@@ -70,7 +70,7 @@ teamPlayers.map(teamPlayer => {
  *  
  */
 const selectPlayer = (e) => {
-    localStoragesetItem('playerFromList', e.target.textContent);
+     localStorage.setItem('playerFromList', e.target.textContent);
 }
 
 const aa = document.querySelectorAll('table a')
