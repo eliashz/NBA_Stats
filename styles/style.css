@@ -13,8 +13,10 @@ body {
     
 }
 
-img {
-    max-width: 100%;
+#dedo {
+    max-width: 250px;
+    transform: rotate(10deg);
+    padding-top: 50px;  
 }
 
 h1, h2 {
@@ -190,7 +192,7 @@ h4 {
     border: 1px solid white;
     width: 20%;
     margin: 20px auto;
-    background-color: #c8102e;
+    background-color: ;
     font-family: 'Battambang', cursive;
     font-size: 0.8em;
     font-weight: lighter;
@@ -209,6 +211,11 @@ a:visited {
 a:hover {
     color: #1d428a;
 }
+
+#dedo:hover {
+    transform: rotate(-15deg);  
+}
+
 
 @media(max-width: 768px) {
     .header .container {
