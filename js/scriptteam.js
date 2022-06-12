@@ -1,5 +1,4 @@
 ;import {fetchData} from "../modules/fetchData.js";
-;import {fetchDataPages} from "../modules/fetchDataPages.js";
 import { inchesToCm, poundsToKg } from "../modules/weightHeight.js";
 
 const teamID = localStorage.getItem('teamID');
@@ -29,40 +28,46 @@ const showTeamInfo = () => {
     teamsDiv.appendChild(fragment);
 }
 showTeamInfo()
-
-const allPlayers = await fetchDataPages(`https://www.balldontlie.io/api/v1/players`);
-const teamPlayers = allPlayers.filter(player => player.team.id == teamID);
-//console.log(teamPlayers)
-
-const tbody = document.querySelector('tbody');
-
+let page = 1;
 let print=true; 
-let enlace=true;
-const showPlayerInfo = (content, tr) => {
-    const td = document.createElement('td');
-    if (enlace) { //Para que el lace solo salga en la primera columna. 
-        const a = document.createElement('a');
-        a.setAttribute('href', '/player.html');
-        td.appendChild(a);
-        a.textContent = content;
-        enlace = false;
-    } else {
-        td.textContent = content;
-    }
-    if (print===false) tr.classList.add('colorTable') //Pinta un fila si y otra no con la clase.
-    tr.appendChild(td);
-    tbody.appendChild(tr);
-}
+do {
+    let url = `https://www.balldontlie.io/api/v1/players?per_page=100&page=${page}`
+    const allPlayers = await fetchData(url);
+    console.log(allPlayers)
+    const teamPlayers = allPlayers.data.filter(player => player.team.id == teamID);
+    //console.log(teamPlayers)
 
-teamPlayers.map(teamPlayer => {
-    const tr = document.createElement('tr');
-    showPlayerInfo(teamPlayer.first_name + ' ' + teamPlayer.last_name, tr);
-    showPlayerInfo(teamPlayer.position, tr);
-    showPlayerInfo(inchesToCm(teamPlayer.height_feet, teamPlayer.height_inches), tr)
-    showPlayerInfo(poundsToKg(teamPlayer.weight_pounds), tr)
-    print = !print;
-    enlace = true;
-})
+    const tbody = document.querySelector('tbody');
+
+    
+    let enlace=true;
+    const showPlayerInfo = (content, tr) => {
+        const td = document.createElement('td');
+        if (enlace) { //Para que el lace solo salga en la primera columna. 
+            const a = document.createElement('a');
+            a.setAttribute('href', '/player.html');
+            td.appendChild(a);
+            a.textContent = content;
+            enlace = false;
+        } else {
+            td.textContent = content;
+        }
+        if (print===false) tr.classList.add('colorTable') //Pinta un fila si y otra no con la clase.
+        tr.appendChild(td);
+        tbody.appendChild(tr);
+    }
+
+    teamPlayers.map(teamPlayer => {
+        const tr = document.createElement('tr');
+        showPlayerInfo(teamPlayer.first_name + ' ' + teamPlayer.last_name, tr);
+        showPlayerInfo(teamPlayer.position, tr);
+        showPlayerInfo(inchesToCm(teamPlayer.height_feet, teamPlayer.height_inches), tr)
+        showPlayerInfo(poundsToKg(teamPlayer.weight_pounds), tr)
+        print = !print;
+        enlace = true;
+    })
+    page++
+} while (page < 10)
 
 /**
  * Al seleccionar un jugador de la tabla, guardamos en localStorage el nombre
