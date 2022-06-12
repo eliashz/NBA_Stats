@@ -2,7 +2,7 @@ export async function fetchDataPages(url) {
     let page = 1;
     let results = [];
     do {
-        let url2 = url + `?page=${page}?per_page=100`;
+        let url2 = url + `?per_page=100&page=${page}`;
         const response = await fetch(url2);
         if (!response.ok) {
             console.log("Error");
@@ -11,6 +11,8 @@ export async function fetchDataPages(url) {
         const data = await response.json();
         page++
         results.push(...data.data);
-    } while (page < 2)
+        console.log(data.meta.total_pages, page)
+    } while (page < 10)
     return results;
+
 }

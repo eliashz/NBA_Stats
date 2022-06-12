@@ -1,4 +1,4 @@
-import { fetchData } from "../modules/fetchData";
+import { fetchData } from "../modules/fetchData.js";
 
 function addCell(textContent, css, tr){
     const td = document.createElement('td');
