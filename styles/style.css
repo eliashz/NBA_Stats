@@ -5,7 +5,6 @@
 }
 
 body {
-    font-family: sans-serif;
     background: #1d428a;
     color:#ffffff;
     font-size: 16p;
@@ -51,6 +50,7 @@ ul {
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
+    color: #fff;
 } 
 
 .header {
@@ -80,9 +80,6 @@ ul {
     justify-content: space-between;
 }
 
-.navbar a:hover{
-    color:#fffd
-}
 
 .navbar .container {
     display: flex;
@@ -105,8 +102,6 @@ span {
     font-size: 1.3em;
     -webkit-text-stroke: 0.1px #fff;
 }
-
-
 
 table {
     border-collapse: collapse;
@@ -192,24 +187,15 @@ h4 {
     border: 1px solid white;
     width: 20%;
     margin: 20px auto;
-    background-color: ;
+    background-color:#c8102e;
     font-family: 'Battambang', cursive;
     font-size: 0.8em;
     font-weight: lighter;
     text-align: center;
 }
 
-
-a {
-    color: #fff;
-}
-
-a:visited {
-    color: #fff;
-}
-
-a:hover {
-    color: #1d428a;
+.nav a:hover{
+    color:#fffd
 }
 
 #dedo:hover {
