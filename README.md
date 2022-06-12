@@ -1,2 +1,2 @@
 # NBA Stats
-Proyecto realizado con HTML, CSS y JavaScript, que recibe datos de [balldontlie](https://www.balldontlie.io/), API que da acceso a datos relacionado con la [NBA](https://es.wikipedia.org/wiki/National_Basketball_Association). 
+Proyecto realizado con HTML, CSS y JavaScript, que recibe datos de [balldontlie](https://www.balldontlie.io/), API que ofrece a datos relacionados con la [NBA](https://es.wikipedia.org/wiki/National_Basketball_Association). 
