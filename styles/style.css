@@ -48,7 +48,7 @@ ul {
 
 .navbar a {
     text-decoration: none;
-    font-size: 18px;
+    font-size: 1.1em;
     font-weight: bold;
     color: #fff;
 } 
@@ -152,15 +152,11 @@ footer {
 }
 
 /* Teams */
-
-.shield-east {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    user-select: none;
-
+.shields {
+    margin-top: 80px;
 }
 
-.shield-west {
+.shield-east, .shield-west {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     user-select: none;
@@ -178,20 +174,16 @@ footer {
     
 }
 
-.shield img:hover {
-  filter: opacity(.5);
-}
-
-
 h4 {
     border: 1px solid white;
-    width: 20%;
+    width: 40%;
     margin: 20px auto;
     background-color:#c8102e;
     font-family: 'Battambang', cursive;
     font-size: 0.8em;
     font-weight: lighter;
     text-align: center;
+    letter-spacing: 0.3em;
 }
 
 .nav a:hover{
@@ -202,6 +194,9 @@ h4 {
     transform: rotate(-15deg);  
 }
 
+.shield img:hover {
+  filter: opacity(.5);
+}
 
 @media(max-width: 768px) {
     .header .container {
