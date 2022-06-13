@@ -28,7 +28,7 @@ const showTeamInfo = () => {
     teamsDiv.appendChild(fragment);
 }
 showTeamInfo()
-let page = 1;
+let page = 31;
 let print=true; 
 do {
     let url = `https://www.balldontlie.io/api/v1/players?per_page=100&page=${page}`
@@ -39,8 +39,7 @@ do {
 
     const tbody = document.querySelector('tbody');
 
-    
-    let enlace=true;
+    let enlace=true; //Para crear enlace en la primera columna de la tabla.
     const showPlayerInfo = (content, tr) => {
         const td = document.createElement('td');
         if (enlace) { //Para que el lace solo salga en la primera columna. 
@@ -67,7 +66,7 @@ do {
         enlace = true;
     })
     page++
-} while (page < 10)
+} while (page < 39)
 
 /**
  * Al seleccionar un jugador de la tabla, guardamos en localStorage el nombre

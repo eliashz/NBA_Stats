@@ -5,6 +5,7 @@
 }
 
 body {
+    font-family: 'Didact Gothic', sans-serif;
     background: #1d428a;
     color:#ffffff;
     font-size: 16p;
@@ -73,6 +74,11 @@ ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-right: ;
+}
+
+.container p {
+    margin-right: 100px;
 }
 
 .boxes .container {
@@ -144,12 +150,7 @@ td {
     visibility: hidden;
 }
 
-footer {
-    text-align: center;
-    font-size: 0.7em;
-    font-family: 'Courier New', Courier, monospace;
 
-}
 
 /* Teams */
 .shields {
@@ -171,7 +172,6 @@ footer {
 .shield img {
     max-width: 150px;
     max-height: 150px;
-    
 }
 
 h4 {
@@ -184,6 +184,19 @@ h4 {
     font-weight: lighter;
     text-align: center;
     letter-spacing: 0.3em;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.7em;
+    color:#fff;
+    border-top: 1px solid #ffffff;
+    width: 70%;
+    margin: 2em auto 0 auto;
+    padding: 1em;
+}
+footer a {
+    color: #fff;
 }
 
 .nav a:hover{
