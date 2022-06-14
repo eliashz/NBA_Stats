@@ -10,15 +10,13 @@ const showPlayerInfo = async (id) => {
     console.log(playerById)
 }
 
-const searchPlayer = async (playerName) => {
-    const playerData = await fetchData(`https://www.balldontlie.io/api/v1/players?search=${playerName}`);
-
-    if (playerData.data.length == 0) {
+const searchPlayer = async () => {
+    const playerData = await fetchData(`https://www.balldontlie.io/api/v1/players?search=${player.value}`);
+    if (playerData.data.length == 0) { // La búsqueda no da ningún resultado.
         result.textContent = 'Jugador no encontrado.'
-    } else if (playerData.data.length === 1) {
-        showPlayerInfo(`${playerData.data[0].first_name} ${playerData.data[0].last_name}`);
-        //result.textContent = `${playerData.data[0].first_name} ${playerData.data[0].last_name}`;
-    } else if (player) {
+    } else if (playerData.data.length === 1) { // Las búsqueda da un resultado -> imprimir estadísticas 
+        showPlayerInfo(playerData.data[0].id);
+    } else if (player) { // La búsqueda da muchos resultados -> el usuario puede seleccionar de una lista
         result.textContent = '';
         playerData.data.map(player => {
             const div = document.createElement('div');
@@ -36,18 +34,19 @@ const searchPlayer = async (playerName) => {
 }
 
 const playerFromTeamList = localStorage.getItem('playerSelected');
-console.log(playerFromTeamList)
 
 if (playerFromTeamList) { //Comprobación de localStorage
-    showPlayerInfo(playerFromTeamList)
     localStorage.removeItem('playerFromList');
+    showPlayerInfo(playerFromTeamList);
 }
 
 const pressEnter = (e) => {
-    if ((e.keyCode === 13) &&  (player.value !== '')){
+    if ((e.keyCode === 13) &&  (player.value.length > 2)){
         searchPlayer();
     }
 }
+
+console.log(player.value.length)
 boton.addEventListener('click', searchPlayer);
 document.body.addEventListener('keydown', pressEnter);
 
