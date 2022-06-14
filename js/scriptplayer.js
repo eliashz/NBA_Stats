@@ -7,9 +7,14 @@ const result = document.querySelector('#result');
 let playerData;
 
 const showPlayerInfo = async (id) => {
-    const playerById = await fetchData(`https://www.balldontlie.io/api/v1/season_averages?player_ids[]=${id}`);
+    let year = 2020;
+    let playerById = await fetchData(`https://www.balldontlie.io/api/v1/season_averages?player_ids[]=${id}`);
 
-    console.log("spi",playerById)
+    while (playerById.data.length === 0 && year > 2001 ) {
+        playerById = await fetchData(`https://www.balldontlie.io/api/v1/season_averages?season=${year}&player_ids[]=${id}`);
+        year--;
+    }
+    console.log(playerById)
 }
 
 const searchPlayer = async () => {
@@ -52,11 +57,8 @@ boton.addEventListener('click', searchPlayer);
 document.body.addEventListener('keydown', pressEnter);
 
 const selectPlayer = (e) => {
-    console.log("eeee", e.target.textContent)
-    //console.log(playerData)
     playerData.data.filter(player => {
         if (player.first_name + ' ' + player.last_name == e.target.textContent) {
-            console.log("player id", player.id)
             showPlayerInfo(player.id);
         }
     });
