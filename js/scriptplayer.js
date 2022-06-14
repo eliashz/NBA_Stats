@@ -4,14 +4,13 @@ const player = document.querySelector('#text');
 const boton = document.querySelector('#boton');
 const result = document.querySelector('#result');
 
-const showPlayerInfo = (playerToShow) => {
-    console.log(playerToShow)
+const showPlayerInfo = async (id) => {
+    const playerById = await fetchData(`https://www.balldontlie.io/api/v1/season_averages?player_ids[]=${id}`);
+
+    console.log(playerById)
 }
 
 const searchPlayer = async (playerName) => {
-    //Comprueba si hay un jugador guardado en localStorage, sino mira lo que hay en el input
-    playerName ? '' : playerName = player.value; 
-    
     const playerData = await fetchData(`https://www.balldontlie.io/api/v1/players?search=${playerName}`);
 
     if (playerData.data.length == 0) {
@@ -36,10 +35,11 @@ const searchPlayer = async (playerName) => {
     player.value = '';
 }
 
-const playerFromTeamList = localStorage.getItem('playerFromList');
+const playerFromTeamList = localStorage.getItem('playerSelected');
+console.log(playerFromTeamList)
 
 if (playerFromTeamList) { //Comprobación de localStorage
-    searchPlayer(playerFromTeamList)
+    showPlayerInfo(playerFromTeamList)
     localStorage.removeItem('playerFromList');
 }
 
