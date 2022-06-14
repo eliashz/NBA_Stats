@@ -33,17 +33,15 @@ let page = 37;
 let print=true; 
 let allTeamPlayers = [];
 do {
+    const tbody = document.querySelector('tbody');
+    let enlace=true; //Para crear enlace en la primera columna de la tabla.
+
     let url = `https://www.balldontlie.io/api/v1/players?per_page=100&page=${page}`
     const allPlayers = await fetchData(url);
-    //console.log(allPlayers)
     const teamPlayers = allPlayers.data.filter(player => player.team.id == teamID);
-    //console.log(teamPlayers)
+
     allTeamPlayers = [...allTeamPlayers, ...teamPlayers];
-    console.log(allTeamPlayers)
 
-    const tbody = document.querySelector('tbody');
-
-    let enlace=true; //Para crear enlace en la primera columna de la tabla.
     const showPlayerInfo = (content, tr) => {
         const td = document.createElement('td');
         if (enlace) { //Para que el lace solo salga en la primera columna. 
@@ -85,7 +83,7 @@ const selectPlayer = (e) => {
     });
 }
 
-const aa = document.querySelectorAll('table a')
+const aa = document.querySelectorAll('table a');
 
 for (const a of aa) {
     a.addEventListener('click', selectPlayer);
