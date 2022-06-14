@@ -16,6 +16,7 @@ body {
     width: 50%;
     margin: 2em auto 0 auto;
     text-align: center;
+    margin-top: 40px;
 }
 
 .buscador input  {
@@ -30,8 +31,9 @@ body {
     color: #ffffff;
     background: #1d428a;
     border: 1px solid #ffffff;
-    padding: 5px 15px;
-    font-size: 0.9em;
+    padding: 8.5px 10px 5.8px 10px;
+
+    font-size: 0.7em;
     font-weight: 100;
 }
 
