@@ -1,4 +1,4 @@
-;import {fetchData} from "../modules/fetchData.js";
+import {fetchData} from "../modules/fetchData.js";
 import { inchesToCm, poundsToKg } from "../modules/weightHeight.js";
 
 const teamID = localStorage.getItem('teamID');
@@ -28,14 +28,18 @@ const showTeamInfo = () => {
     teamsDiv.appendChild(fragment);
 }
 showTeamInfo()
-let page = 31;
+
+let page = 37;
 let print=true; 
+let allTeamPlayers = [];
 do {
     let url = `https://www.balldontlie.io/api/v1/players?per_page=100&page=${page}`
     const allPlayers = await fetchData(url);
-    console.log(allPlayers)
+    //console.log(allPlayers)
     const teamPlayers = allPlayers.data.filter(player => player.team.id == teamID);
     //console.log(teamPlayers)
+    allTeamPlayers = [...allTeamPlayers, ...teamPlayers];
+    console.log(allTeamPlayers)
 
     const tbody = document.querySelector('tbody');
 
@@ -66,15 +70,19 @@ do {
         enlace = true;
     })
     page++
-} while (page < 39)
+} while (page <= 38)
 
 /**
- * Al seleccionar un jugador de la tabla, guardamos en localStorage el nombre
+ * Al seleccionar un jugador de la tabla, guardamos en localStorage el nombre y la ID
  * para que al redirigir a la página de jugadores se imprima éste jugador.
  *  
  */
 const selectPlayer = (e) => {
-     localStorage.setItem('playerFromList', e.target.textContent);
+    allTeamPlayers.filter(player => {
+        if (player.first_name + ' ' + player.last_name == e.target.textContent) {
+            localStorage.setItem('playerSelected', player.id);
+        }
+    });
 }
 
 const aa = document.querySelectorAll('table a')
