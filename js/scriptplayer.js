@@ -6,23 +6,36 @@ const result = document.querySelector('#result');
 
 let playerData;
 
-const showPlayerInfo = async (id) => {
-    let year = 2020;
-    let playerById = await fetchData(`https://www.balldontlie.io/api/v1/season_averages?player_ids[]=${id}`);
+const selectYear = () => {
+    let x = document.getElementById("year").selectedIndex;
+    let y = document.getElementById("year").options;
+    return y[x].text;
+}
 
-    while (playerById.data.length === 0 && year > 2001 ) {
+const showPlayerInfo = async (id, year=2021) => {
+    /* let year = 2020; */
+    //let playerById = await fetchData(`https://www.balldontlie.io/api/v1/season_averages?player_ids[]=${id}`);
+    
+    let playerById = await fetchData(`https://www.balldontlie.io/api/v1/season_averages?season=${year}&player_ids[]=${id}`);
+    
+    /* while (playerById.data.length === 0 && year > 2001 ) {
         playerById = await fetchData(`https://www.balldontlie.io/api/v1/season_averages?season=${year}&player_ids[]=${id}`);
         year--;
+    } */
+    if (playerById.data.length === 0) {
+        result.textContent = `No hay datos de *** en ${year}`;
     }
     console.log(playerById)
 }
 
 const searchPlayer = async () => {
+    let year = selectYear();
+    console.log(year)
     playerData = await fetchData(`https://www.balldontlie.io/api/v1/players?search=${player.value}`);
     if (playerData.data.length == 0) { // La búsqueda no da ningún resultado.
         result.textContent = 'Jugador no encontrado.'
     } else if (playerData.data.length === 1) { // Las búsqueda da un resultado -> imprimir estadísticas 
-        showPlayerInfo(playerData.data[0].id);
+        showPlayerInfo(playerData.data[0].id, year);
     } else if (player) { // La búsqueda da muchos resultados -> el usuario puede seleccionar de una lista
         result.textContent = '';
         playerData.data.map(player => {
@@ -44,7 +57,7 @@ const playerFromTeamList = localStorage.getItem('playerSelected');
 
 if (playerFromTeamList) { //Comprobación de que hay algo en el localStorage
     localStorage.removeItem('playerSelected');
-    showPlayerInfo(playerFromTeamList);
+    showPlayerInfo(playerFromTeamList, 2021);
 }
 
 const pressEnter = (e) => { //Al pulsar enter realiza una búsqueda
@@ -59,7 +72,7 @@ document.body.addEventListener('keydown', pressEnter);
 const selectPlayer = (e) => {
     playerData.data.filter(player => {
         if (player.first_name + ' ' + player.last_name == e.target.textContent) {
-            showPlayerInfo(player.id);
+            showPlayerInfo(player.id, selectYear());
         }
     });
 }
