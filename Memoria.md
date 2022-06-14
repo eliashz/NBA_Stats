@@ -31,6 +31,11 @@ Se ha seguido el trabajo, generando esta página sobre jugadores. El primer paso
 Para los resultados de la búsqueda, se ha realizado un condicional con tres opciones:
 + Jugador encontrado. Que llevará al usuario a la página del jugador con información del mismo.
 + La búsqueda ofrece muchos jugadores, por la similaridad del nombre. Este resultado imprimirá una lista con los jugadores encontrados y el usuario puede seleccionar el que está buscando, al pinchar, se redireccionará a la página con información de dicho jugador.
-+ Jugador no encontrado. Se imprime por pantalla dicho mensaje. 
++ Jugador no encontrado. Se imprime por pantalla dicho mensaje.  
+
+Debido a la limitación de las llamadas a la API, se ha tomado la medida de poner unos límites dentro de la página. Después de un estudio la información, al entrar en la sección de equipos y hacer un búsqueda, se ofrecerán resultados de las últimas páginas de la API, que coincide con los jugadores que están en activo.  
+Otra limitación que se ha puesto, ya que la información sobre estadísticas está dividida por años, es limitar la información entregada al último año jugado por ese jugador y limitar la información hasta el año 2000. Ya que si hacemos la búsqueda de un jugador que si último año fue en 1980 y empezamos a buscar desde el año 2021, tendríamos que hacer 41 llamadas a la API para obtener ese resultado, por lo que casi se estaría llegando al límites puesto por la API.  
 
 ## Consideraciones finales y desarrollo futuro:
+Una de las vías para un desarrollo futuro, sería la de trabajar con la información sobre partidos. Habría que analizar de que manera se podría realizar este trato de esta información ya que la parte sobre partidos de esta API es un poco difusa.  
+Otra de las posibles vías de trabajo, sería la de ofrecer búsquedas en base años. Es decir, buscar la información de X jugador en determinada temporada. Ya que de momento, solo se ofrece información del último año jugado.   
