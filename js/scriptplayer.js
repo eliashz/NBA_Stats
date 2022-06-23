@@ -12,41 +12,76 @@ const selectYear = () => {
     let y = document.getElementById("year").options;
     return y[x].text;
 }
+ const showTable = (content, tbody, tr) => {
+    const td = document.createElement('td');
+    
+    td.textContent = content;
+    tr.appendChild(td);
+    tbody.appendChild(tr);
+
+} 
 
 const showPlayerInfo = async (player, year=2021) => {
     
     let playerById = await fetchData(`https://www.balldontlie.io/api/v1/season_averages?season=${year}&player_ids[]=${player.id}`);
 
-    if (playerById.data == []) {
-        result.textContent = `No hay datos de *** en ${year}`;
-    } else {
-        result.innerHTML = '';
-        document.querySelector('.buscador').innerHTML = '';
+     result.innerHTML = '';
+    //document.querySelector('.buscador').innerHTML = '';
+    document.querySelector('section').innerHTML = '';
+    //document.querySelector('.teams').innerHTML = '';
+    //document.querySelector('.container2').innerHTML = '';
 
-        const fragment = document.createDocumentFragment();
-        const template = document.querySelector('#template-team').content;
 
-        const playerDiv = template.cloneNode(true);
 
-        playerDiv.querySelector('img').src += `${player.team.id}.png`;
-        playerDiv.querySelector('img').alt = player.team.full_name;
+    const fragment = document.createDocumentFragment();
+    const template = document.querySelector('#template-team').content;
 
-        playerDiv.querySelector('#team').innerHTML = player.first_name + ' ' + player.last_name;
-        playerDiv.querySelector('.name').textContent = `POSICION: ${player.position}`; 
-        playerDiv.querySelector('.position').textContent = `Altura: ${inchesToCm(player.height_feet, player.height_inches)} | Peso: ${poundsToKg(player.weight_pounds)}`
+    const playerDiv = template.cloneNode(true);
 
-        fragment.appendChild(playerDiv);
+    playerDiv.querySelector('img').src += `${player.team.id}.png`;
+    playerDiv.querySelector('img').alt = player.team.full_name;
 
-        const playersDiv = document.querySelector('header');
-        playersDiv.appendChild(fragment);
-    }
+    playerDiv.querySelector('#team').innerHTML = player.first_name + ' ' + player.last_name;
+    playerDiv.querySelector('.name').textContent = `POSICION: ${player.position}`; 
+    playerDiv.querySelector('.position').textContent = `Altura: ${inchesToCm(player.height_feet, player.height_inches)} | Peso: ${poundsToKg(player.weight_pounds)}`
 
+    fragment.appendChild(playerDiv);
+
+    const playersDiv = document.querySelector('header');
+    playersDiv.appendChild(fragment);
+    
+    //Template de la tabla
+    
+    const fragment2 = document.createDocumentFragment();
+    const template2 = document.querySelector('#template-table').content;
+    
+    const tableDiv = template2.cloneNode(true);
+    
+    tableDiv.querySelector('tbody');
+    
+    const tbody = tableDiv.querySelector('tbody');
+    const tr = document.createElement('tr');
+
+    showTable(playerById.data[0].season, tbody, tr);
+    showTable(playerById.data[0].games_played, tbody, tr);
+    showTable(playerById.data[0].min, tbody, tr);
+    showTable(playerById.data[0].pts, tbody, tr);
+    showTable(playerById.data[0].reb, tbody, tr);
+    showTable(playerById.data[0].ast, tbody, tr);
+    showTable(playerById.data[0].stl, tbody, tr);
+    showTable(playerById.data[0].blk, tbody, tr);
+    showTable(playerById.data[0].turnover, tbody, tr);
+
+    fragment2.appendChild(tableDiv);
+
+    const tablesDiv = document.querySelector('section');
+    tablesDiv.appendChild(fragment2);
 }
 
 const searchPlayer = async () => {
     let year = selectYear();
-
     playerData = await fetchData(`https://www.balldontlie.io/api/v1/players?search=${player.value}`);
+
     if (playerData.data.length == 0) { // La búsqueda no da ningún resultado.
         result.textContent = 'Jugador no encontrado.'
     } else if (playerData.data.length === 1) { // Las búsqueda da un resultado -> imprimir estadísticas 
