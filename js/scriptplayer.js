@@ -56,10 +56,10 @@ const searchPlayer = async () => {
 
 const playerFromTeamList = localStorage.getItem('playerSelected');
 
-console.log("local", playerFromTeamList)
+console.log("local", )
 if (playerFromTeamList) { //Comprobación de que hay algo en el localStorage
     localStorage.removeItem('playerSelected');
-    showPlayerInfo(playerFromTeamList, 2021);
+    showPlayerInfo(JSON.parse(playerFromTeamList), 2021);
 }
 
 const pressEnter = (e) => { //Al pulsar enter realiza una búsqueda

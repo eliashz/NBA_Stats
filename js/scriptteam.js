@@ -47,7 +47,7 @@ do {
         const td = document.createElement('td');
         if (enlace) { //Para que el enlace solo salga en la primera columna. 
             const a = document.createElement('a');
-            a.setAttribute('href', '#');
+            a.setAttribute('href', '/player.html');
             td.appendChild(a);
             a.textContent = content;
             enlace = false;
@@ -80,7 +80,7 @@ const selectPlayer = (e) => {
     allTeamPlayers.filter(player => {
         if (player.first_name + ' ' + player.last_name === e.target.textContent) {
             console.log("local", player)
-            localStorage.setItem('playerSelected', {id: player.id});
+            localStorage.setItem('playerSelected', JSON.stringify(player));
         }
     });
 }
