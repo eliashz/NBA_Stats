@@ -30,8 +30,9 @@ const showTeamInfo = () => {
 showTeamInfo()
 
 let page = 37;
-let print=true; 
+let print = true; 
 let allTeamPlayers = [];
+
 do {
     const tbody = document.querySelector('tbody');
     let enlace=true; //Para crear enlace en la primera columna de la tabla.
@@ -44,16 +45,16 @@ do {
 
     const showPlayerInfo = (content, tr) => {
         const td = document.createElement('td');
-        if (enlace) { //Para que el lace solo salga en la primera columna. 
+        if (enlace) { //Para que el enlace solo salga en la primera columna. 
             const a = document.createElement('a');
-            a.setAttribute('href', '/player.html');
+            a.setAttribute('href', '#');
             td.appendChild(a);
             a.textContent = content;
             enlace = false;
         } else {
             td.textContent = content;
         }
-        if (print===false) tr.classList.add('colorTable') //Pinta un fila si y otra no con la clase.
+        if (!print) tr.classList.add('colorTable') //Pinta un fila si y otra no con la clase.
         tr.appendChild(td);
         tbody.appendChild(tr);
     }
@@ -77,12 +78,14 @@ do {
  */
 const selectPlayer = (e) => {
     allTeamPlayers.filter(player => {
-        if (player.first_name + ' ' + player.last_name == e.target.textContent) {
-            localStorage.setItem('playerSelected', player.id);
+        if (player.first_name + ' ' + player.last_name === e.target.textContent) {
+            console.log("local", player)
+            localStorage.setItem('playerSelected', {id: player.id});
         }
     });
 }
 
+//Seleccionar enlace del jugador en la tabla
 const aa = document.querySelectorAll('table a');
 
 for (const a of aa) {

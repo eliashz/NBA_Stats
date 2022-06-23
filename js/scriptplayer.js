@@ -12,11 +12,12 @@ const selectYear = () => {
     return y[x].text;
 }
 
-const showPlayerInfo = async (id, year=2021) => {
+const showPlayerInfo = async (player, year=2021) => {
+    console.log(player)
     /* let year = 2020; */
     //let playerById = await fetchData(`https://www.balldontlie.io/api/v1/season_averages?player_ids[]=${id}`);
     
-    let playerById = await fetchData(`https://www.balldontlie.io/api/v1/season_averages?season=${year}&player_ids[]=${id}`);
+    let playerById = await fetchData(`https://www.balldontlie.io/api/v1/season_averages?season=${year}&player_ids[]=${player.id}`);
     
     /* while (playerById.data.length === 0 && year > 2001 ) {
         playerById = await fetchData(`https://www.balldontlie.io/api/v1/season_averages?season=${year}&player_ids[]=${id}`);
@@ -35,7 +36,7 @@ const searchPlayer = async () => {
     if (playerData.data.length == 0) { // La búsqueda no da ningún resultado.
         result.textContent = 'Jugador no encontrado.'
     } else if (playerData.data.length === 1) { // Las búsqueda da un resultado -> imprimir estadísticas 
-        showPlayerInfo(playerData.data[0].id, year);
+        showPlayerInfo(playerData.data[0], year);
     } else if (player) { // La búsqueda da muchos resultados -> el usuario puede seleccionar de una lista
         result.textContent = '';
         playerData.data.map(player => {
@@ -50,11 +51,12 @@ const searchPlayer = async () => {
             playerDiv.addEventListener('click', selectPlayer);
         }
     }
-    player.value = '';//Vacía el inpu después de una búsqueda
+    player.value = ''; //Vacía el input después de una búsqueda
 }
 
 const playerFromTeamList = localStorage.getItem('playerSelected');
 
+console.log("local", playerFromTeamList)
 if (playerFromTeamList) { //Comprobación de que hay algo en el localStorage
     localStorage.removeItem('playerSelected');
     showPlayerInfo(playerFromTeamList, 2021);
