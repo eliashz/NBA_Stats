@@ -1,4 +1,5 @@
 import { fetchData } from "../modules/fetchData.js";
+import { inchesToCm, poundsToKg } from "../modules/weightHeight.js";
 
 const player = document.querySelector('#text');
 const boton = document.querySelector('#boton');
@@ -13,25 +14,38 @@ const selectYear = () => {
 }
 
 const showPlayerInfo = async (player, year=2021) => {
-    console.log(player)
-    /* let year = 2020; */
-    //let playerById = await fetchData(`https://www.balldontlie.io/api/v1/season_averages?player_ids[]=${id}`);
     
     let playerById = await fetchData(`https://www.balldontlie.io/api/v1/season_averages?season=${year}&player_ids[]=${player.id}`);
-    
-    /* while (playerById.data.length === 0 && year > 2001 ) {
-        playerById = await fetchData(`https://www.balldontlie.io/api/v1/season_averages?season=${year}&player_ids[]=${id}`);
-        year--;
-    } */
-    if (playerById.data.length === 0) {
+
+    if (playerById.data == []) {
         result.textContent = `No hay datos de *** en ${year}`;
+    } else {
+        result.innerHTML = '';
+        document.querySelector('.buscador').innerHTML = '';
+
+        const fragment = document.createDocumentFragment();
+        const template = document.querySelector('#template-team').content;
+
+        const playerDiv = template.cloneNode(true);
+
+        playerDiv.querySelector('img').src += `${player.team.id}.png`;
+        playerDiv.querySelector('img').alt = player.team.full_name;
+
+        playerDiv.querySelector('#team').innerHTML = player.first_name + ' ' + player.last_name;
+        playerDiv.querySelector('.name').textContent = `POSICION: ${player.position}`; 
+        playerDiv.querySelector('.position').textContent = `Altura: ${inchesToCm(player.height_feet, player.height_inches)} | Peso: ${poundsToKg(player.weight_pounds)}`
+
+        fragment.appendChild(playerDiv);
+
+        const playersDiv = document.querySelector('header');
+        playersDiv.appendChild(fragment);
     }
-    console.log(playerById)
+
 }
 
 const searchPlayer = async () => {
     let year = selectYear();
-    console.log(year)
+
     playerData = await fetchData(`https://www.balldontlie.io/api/v1/players?search=${player.value}`);
     if (playerData.data.length == 0) { // La búsqueda no da ningún resultado.
         result.textContent = 'Jugador no encontrado.'
@@ -56,7 +70,6 @@ const searchPlayer = async () => {
 
 const playerFromTeamList = localStorage.getItem('playerSelected');
 
-console.log("local", )
 if (playerFromTeamList) { //Comprobación de que hay algo en el localStorage
     localStorage.removeItem('playerSelected');
     showPlayerInfo(JSON.parse(playerFromTeamList), 2021);
@@ -74,7 +87,7 @@ document.body.addEventListener('keydown', pressEnter);
 const selectPlayer = (e) => {
     playerData.data.filter(player => {
         if (player.first_name + ' ' + player.last_name == e.target.textContent) {
-            showPlayerInfo(player.id, selectYear());
+            showPlayerInfo(player, selectYear());
         }
     });
 }

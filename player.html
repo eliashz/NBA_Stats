@@ -33,7 +33,7 @@
         <!--     <form name="formulario" method="post">
                 <input id='form' type="number" name="numero" value="2021" min="1979" max="2021" step="1" />
               </form>  -->
-              <select id="year">
+            <select id="year">
                 <option value='2021'>2021</option>
                 <option value='2020'>2020</option>
                 <option value='2019'>2019</option>
@@ -77,26 +77,45 @@
                 <option value='1981'>1981</option>
                 <option value='1980'>1980</option>
                 <option value='1979'>1979</option>
-              </select>
+            </select>
             <button id='boton'>Buscar</button>
         </div>
-        <div id="result"></div>
-        <template>
-            <div class="players">
-                <div class="shield">
-                    <img src="/img/1.png" class="shield" alt="Memphis Grizzlies"/>
-                </div>
-                <div class="player">    
-                    <p class="name">Ja Morant</p> 
-                    <p class="position">Point Guard</p>     
-                    
-                </div>
-            </div>   
-        </template>
-            
-        </div>
+        <div id="result"></div>           
     </header>
-
+    <section class="roster"></section>
+    <template id="template-team">
+        <div class="teams">
+            <div class="logo">
+                <img src="/img/" class="" alt=""/>
+            </div>
+            <div class="team">    
+                <h1 id="team"></h1>
+                <p class="name"></p> 
+                <p class="position"></p>     
+            </div>
+        </div>
+    </template>
+    <template id="playerTable">
+        <div class="container2">
+            <table>
+                <thead>
+                    <tr>
+                        <th>TEMPORADA</th>
+                        <th>PARTIDOS JUGADOS</th>
+                        <th>MINUTOS</th>
+                        <th>PUNTOS</th>
+                        <th>REBOTES</th>
+                        <th>ASITENCIAS</th>
+                        <th>ROBOS</th>
+                        <th>TAPONES</th>
+                        <th>PÉRDIDAS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>    
+    </template>
     <noscript>
         <strong>Your browser does not support JavaScript.</strong> 
     </noscript>

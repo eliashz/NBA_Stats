@@ -6,7 +6,6 @@ const teamID = localStorage.getItem('teamID');
 const dataTeam = await fetchData(`https://www.balldontlie.io/api/v1/teams/`);
 
 const team = dataTeam.data.filter(team => team.id == teamID);
-//console.log(team)
 
 const showTeamInfo = () => {
     const fragment = document.createDocumentFragment();
@@ -79,7 +78,6 @@ do {
 const selectPlayer = (e) => {
     allTeamPlayers.filter(player => {
         if (player.first_name + ' ' + player.last_name === e.target.textContent) {
-            console.log("local", player)
             localStorage.setItem('playerSelected', JSON.stringify(player));
         }
     });
