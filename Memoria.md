@@ -43,8 +43,13 @@ El último paso ha sido implementar la página de jugadores (player.html). El us
 
 Para imprimir por pantalla la primera información, se ha aprovechado el *template* que se usaba en la página de equipos. Si el tiempo lo permite, más adelante se podría evaluar si es posible meter esa información en un módulo. Para imprimir el segundo bloque de información se ha creado una tabla mediante un *template*. Si el jugador buscado, no ha jugado el año seleccionado, se imprimirá un mensaje por pantalla.  
 
+Con el tiempo que resta para la entrega, se da por finalizado el Proyecto Final. Estos últimos días los quiero dedicar a poner un poco de orden y a borrar cosas que finalmente no se han usado. También, ver si es posible aplicar un par de funciones a módulos. 
+
 ## Consideraciones finales y desarrollo futuro:  
-El desarrollo de la aplicación ha estado marcada por las limitaciones que exigía la API, ya que sin estas limitaciones se podría haber ido más allá en el desarrollo de la misma. Uno de los objetivos para un futuro sería encontrar la manera de obtener más información teniendo en cuenta está limitación.
-Otra de las vías para un desarrollo futuro, sería la de trabajar con la información sobre partidos. Habría que analizar de que manera se podría realizar este trato de esta información ya que la parte sobre partidos de esta API es un poco difusa.  
+El desarrollo de la aplicación ha estado marcada por las limitaciones que exigía la API, ya que sin estas limitaciones se podría haber ido más allá en el desarrollo de la misma. Uno de los objetivos para un futuro sería encontrar la manera de obtener más información teniendo en cuenta está limitación.  
+
+Otra de las vías para un desarrollo futuro, sería la de trabajar con la información sobre partidos. Habría que analizar de que manera se podría realizar este trato de esta información ya que la parte sobre partidos de esta API es un poco difusa.   
+
 También se estudiará la idea que se echó para atrás durante el proceso de tener un CSS para cada equipo.  
-Finalmente, otra posibilidad sería la de ofrecer búsquedas en base a los años. Es decir, buscar la información de X jugador en determinada temporada. Ya que de momento, solo se ofrece información del último año jugado.   
+
+Finalmente, otra posibilidad sería la de ampliar la búsqueda por año. Una vez dentro de la información del jugador, dejar el formulario de los años e ir imprimiendo en base a la selección del usuario. 
