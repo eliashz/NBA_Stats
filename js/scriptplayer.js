@@ -12,13 +12,13 @@ const selectYear = () => {
     let y = document.getElementById("year").options;
     return y[x].text;
 }
- const showTable = (content, tbody, tr) => {
+
+const showTable = (content, tbody, tr) => {
     const td = document.createElement('td');
     
     td.textContent = content;
     tr.appendChild(td);
     tbody.appendChild(tr);
-
 } 
 
 const showPlayerInfo = async (player, year=2021) => {
