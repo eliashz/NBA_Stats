@@ -10,7 +10,6 @@ body {
     color:#ffffff;
     font-size: 16p;
     line-height: 1.5;
-    
 }
 
 #dedo {
@@ -142,7 +141,7 @@ footer {
     font-size: 0.7em;
     color:#fff;
     border-top: 1px solid #ffffff;
-    width: 70%;
+    width: 50%;
     margin: 2em auto 0 auto;
     padding: 1em;
     margin-top: 10em;
