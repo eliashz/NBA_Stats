@@ -85,12 +85,10 @@ ul {
     justify-content: space-between;
 }
 
-
 .navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-   /*  height: 160%; */
 } 
 
 .navbar ul {
@@ -108,7 +106,7 @@ span {
     -webkit-text-stroke: 0.1px #fff;
 }
 
-table {
+/* table {
     border-collapse: collapse;
     width: 80%;
     margin: 50px auto;
@@ -147,7 +145,7 @@ td {
 
 .matchRow {
     visibility: hidden;
-}
+} */
 
 /* Teams */
 .shields {
@@ -192,11 +190,13 @@ footer {
     margin: 2em auto 0 auto;
     padding: 1em;
 }
-footer a {
+
+a {
     color: #fff;
+    text-decoration: none;
 }
 
-.nav a:hover{
+a:hover{
     color:#fffd
 }
 
