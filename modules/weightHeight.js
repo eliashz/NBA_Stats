@@ -14,4 +14,4 @@ const inchesToCm = (feet, inch) => {
     return parseInt(feet * 30.48 + inch * 2.54) + ' cm';
 }
 
-export { poundsToKg, inchesToCm}
+export { poundsToKg, inchesToCm }

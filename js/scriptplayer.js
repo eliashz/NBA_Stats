@@ -22,9 +22,7 @@ const showTable = (content, tbody, tr) => {
 } 
 
 const showPlayerInfo = async (player, year=2021) => {
-    
     let playerById = await fetchData(`https://www.balldontlie.io/api/v1/season_averages?season=${year}&player_ids[]=${player.id}`);
-    console.log(playerById.data.length)
 
     if (playerById.data.length >= 1){
         result.innerHTML = '';
@@ -47,7 +45,7 @@ const showPlayerInfo = async (player, year=2021) => {
         const playersDiv = document.querySelector('header');
         playersDiv.appendChild(fragment);
     
-    //Template de la tabla
+        //Template de la tabla
         const fragment2 = document.createDocumentFragment();
         const template2 = document.querySelector('#template-table').content;
         
@@ -107,6 +105,8 @@ const playerFromTeamList = localStorage.getItem('playerSelected');
 if (playerFromTeamList) { //Comprobación de que hay algo en el localStorage
     localStorage.removeItem('playerSelected');
     showPlayerInfo(JSON.parse(playerFromTeamList), 2021);
+} else { //Imprimir buscador
+    const fragment = document.createDocumentFragment();
 }
 
 const pressEnter = (e) => { //Al pulsar enter realiza una búsqueda
@@ -125,4 +125,3 @@ const selectPlayer = (e) => {
         }
     });
 }
-

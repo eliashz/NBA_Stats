@@ -1,4 +1,4 @@
-import {fetchData} from "../modules/fetchData.js";
+import { fetchData } from "../modules/fetchData.js";
 import { inchesToCm, poundsToKg } from "../modules/weightHeight.js";
 
 const teamID = localStorage.getItem('teamID');
@@ -71,9 +71,8 @@ do {
 } while (page <= 38)
 
 /**
- * Al seleccionar un jugador de la tabla, guardamos en localStorage el nombre y la ID
- * para que al redirigir a la página de jugadores se imprima éste jugador.
- *  
+ * Al seleccionar un jugador de la tabla, se guarda en localStorage 
+ *  el jugador seleccionado para mostrarlo en la página de jugador.
  */
 const selectPlayer = (e) => {
     allTeamPlayers.filter(player => {
