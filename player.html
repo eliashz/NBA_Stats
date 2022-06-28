@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/js/scriptplayer.js" type="module"></script>
+    <script src="/js/scriptplayer.js" type="module" defer></script>
     <link rel="stylesheet" href="/styles/mem.css">   
     <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@700&family=Satisfy&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
@@ -28,49 +28,10 @@
         </div>
     </nav>
     <header>
-        
-    </header>
-    <section class="roster"></section>
-    <!-- Templates -->
-
-    <template id="template-team">
-        <div class="teams">
-            <div class="logo">
-                <img src="/img/" class="" alt=""/>
-            </div>
-            <div class="team">    
-                <h1 id="team"></h1>
-                <p class="name"></p> 
-                <p class="position"></p>     
-            </div>
-        </div>
-    </template>
-    <template id="template-table">
-        <div class="container2">
-            <table>
-                <thead>
-                    <tr>
-                        <th>TEMPORADA</th>
-                        <th>PARTIDOS</th>
-                        <th>MINUTOS</th>
-                        <th>PUNTOS</th>
-                        <th>REBOTES</th>
-                        <th>ASITENCIAS</th>
-                        <th>ROBOS</th>
-                        <th>TAPONES</th>
-                        <th>PERDIDAS</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-        </div>    
-    </template>
-    <template id="template-buscador">
         <div class="buscador">
             <input id='text' type='text' placeholder="Introduce jugador" autofocus>
             <select id="year">
-                <!-- <option value='2021'>2021</option>
+                <option value='2021'>2021</option>
                 <option value='2020'>2020</option>
                 <option value='2019'>2019</option>
                 <option value='2018'>2018</option>
@@ -112,12 +73,46 @@
                 <option value='1982'>1982</option>
                 <option value='1981'>1981</option>
                 <option value='1980'>1980</option>
-                <option value='1979'>1979</option> -->
+                <option value='1979'>1979</option>
             </select>
             <button id='boton'>Buscar</button>
         </div>
-        <div id="result"></div>  
-    </template> 
+        <div id="result"></div>           
+    </header>
+    <section class="roster"></section>
+    <template id="template-team">
+        <div class="teams">
+            <div class="logo">
+                <img src="/img/" class="" alt=""/>
+            </div>
+            <div class="team">    
+                <h1 id="team"></h1>
+                <p class="name"></p> 
+                <p class="position"></p>     
+            </div>
+        </div>
+    </template>
+    <template id="template-table">
+        <div class="container2">
+            <table>
+                <thead>
+                    <tr>
+                        <th>TEMPORADA</th>
+                        <th>PARTIDOS</th>
+                        <th>MINUTOS</th>
+                        <th>PUNTOS</th>
+                        <th>REBOTES</th>
+                        <th>ASITENCIAS</th>
+                        <th>ROBOS</th>
+                        <th>TAPONES</th>
+                        <th>PERDIDAS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>    
+    </template>
     <noscript>
         <strong>Your browser does not support JavaScript.</strong> 
     </noscript>
