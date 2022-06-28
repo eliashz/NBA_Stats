@@ -45,13 +45,15 @@ Para imprimir por pantalla la primera información, se ha aprovechado el *templa
 
 En estos últimos días, he estado intentando corregir un pequeño error, ya que cuando se llega a player.html desde la pantalla de equipos, hay un pequeño instante que se ve el buscador. Se está probando a meter el buscador via template, desde un *if* que busca si hay información en el localStorage, pero de momento el addEventListener está dando un error que no sé detectar.  
 
-Con el tiempo que resta para la entrega, se da por finalizado el Proyecto Final. Estos últimos días los quiero dedicar a poner un poco de orden y a borrar cosas que finalmente no se han usado. También, ver si es posible aplicar un par de funciones a módulos. 
+Finalmente, se ha echado para atrás la idea del uso del template, debido a no encontrar solución para lo comentado anteriormente.  
+
+Con el tiempo que resta para la entrega, se da por finalizado el Proyecto Final. Estos últimos días los quiero dedicar a poner un poco de orden y a borrar cosas que finalmente no se han usado. También, ver si es posible aplicar un par de funciones a módulos.  
 
 ## Consideraciones finales y desarrollo futuro:  
-El desarrollo de la aplicación ha estado marcada por las limitaciones que exigía la API, ya que sin estas limitaciones se podría haber ido más allá en el desarrollo de la misma. Uno de los objetivos para un futuro sería encontrar la manera de obtener más información teniendo en cuenta está limitación.  
+El desarrollo de la aplicación ha estado marcada por las limitaciones que exigía la API, ya que sin estas limitaciones se podría haber ido más allá en el desarrollo de la misma. Uno de los objetivos para un futuro sería encontrar la manera de ofrecer más información teniendo en cuenta está limitación.  
 
 Un de las vías para un desarrollo futuro, sería la de trabajar con la información sobre partidos. Habría que analizar de que manera se podría realizar este trato de esta información ya que la parte sobre partidos de esta API es un poco difusa.   
 
-También se estudiará la idea que se echó para atrás durante el proceso de tener un CSS para cada equipo.  
+También se estudiará la idea que se echó para atrás durante el proceso de tener un CSS para cada equipo y poner todo el contenido en castellano, ya que hay información que sigue en inglés ya que que está tal cual como viene de la API.  
 
 Finalmente, otra posibilidad sería la de ampliar la búsqueda por año. Una vez dentro de la información del jugador, dejar el formulario de los años e ir imprimiendo en base a la selección del usuario. 

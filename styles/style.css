@@ -21,7 +21,6 @@ body {
 
 h1, h2 {
     margin-bottom: 15px;
-    
 }
 
 ul {
@@ -39,7 +38,6 @@ ul {
     font-family: 'Battambang', cursive;
     height: 85px;
     border-bottom: #fff 15px solid;
-    
 }
 
 .navbar .logo {
@@ -51,7 +49,6 @@ ul {
     text-decoration: none;
     font-size: 1.1em;
     font-weight: bold;
-    color: #fff;
 } 
 
 .header {
@@ -105,47 +102,6 @@ span {
     font-size: 1.3em;
     -webkit-text-stroke: 0.1px #fff;
 }
-
-/* table {
-    border-collapse: collapse;
-    width: 80%;
-    margin: 50px auto;
-}
-
-th {
-    font-family: 'Battambang', cursive;
-    font-size: larger;
-    font-variant: small-caps;
-    color:#1d428a;
-    letter-spacing: 0.2em;
-    background-color: #fffe;
-    padding: .5em 0;
-}
-
-td {
-    padding: 1em 0 0 0; 
-}
-
-.home {
-    text-align: right;
-    padding-right: 1em;
-    width: 35%;
-}
-
-.away {
-    text-align: left;
-    padding-left: 1em;
-    width: 35%;
-}
-
-.score {
-    text-align: center;
-    width: 5%;
-}
-
-.matchRow {
-    visibility: hidden;
-} */
 
 /* Teams */
 .shields {

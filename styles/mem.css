@@ -85,7 +85,6 @@ ul {
     font-family: 'Battambang', cursive;
     height: 85px;
     border-bottom: #ffffff 15px solid;
-    
 }
 
 .navbar .logo {
@@ -113,7 +112,7 @@ ul {
     margin-left: 10px;
 }
 
-.stats {
+span {
     font-family: 'Satisfy', cursive;
     color: transparent;
     font-size: 1.3em;
@@ -227,7 +226,6 @@ thead {
     color:#5D76A9;
     font-family: 'Battambang', cursive;
     font-size: 0.9em;
-    
 }
 
 th, td {
