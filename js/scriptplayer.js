@@ -101,23 +101,19 @@ const searchPlayer = async () => {
 }
 
 const playerFromTeamList = localStorage.getItem('playerSelected');
-console.log(playerFromTeamList)
 
 if (playerFromTeamList) { //Comprobación de que hay algo en el localStorage
     localStorage.removeItem('playerSelected');
     showPlayerInfo(JSON.parse(playerFromTeamList), 2021);
 } else { //Imprimir buscador
-    const fragment = document.createDocumentFragment();
-    const template = document.querySelector("#template-buscador").content;
+    const template2 = document.querySelector("#template-buscador").content;
 
-    const buscadorDiv = template.cloneNode(true);
-
-    fragment.appendChild(buscadorDiv);
+    const buscadorDiv = template2.cloneNode(true);
 
     const header = document.querySelector('header');
-    header.appendChild(fragment);
-    
-    boton.addEventListener('click', searchPlayer);
+    header.appendChild(buscadorDiv);
+
+    boton?.addEventListener('click', searchPlayer);
     document.body.addEventListener('keydown', pressEnter);
 
     const pressEnter = (e) => { //Al pulsar enter realiza una búsqueda
@@ -126,6 +122,8 @@ if (playerFromTeamList) { //Comprobación de que hay algo en el localStorage
         }
     }   
 }
+
+//Lista de jugadores cuando da más de un resultado la búsqueda
 const selectPlayer = (e) => {
     playerData.data.filter(player => {
         if (player.first_name + ' ' + player.last_name == e.target.textContent) {
@@ -133,3 +131,4 @@ const selectPlayer = (e) => {
         }
     });
 }
+
