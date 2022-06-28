@@ -1,6 +1,6 @@
 # **NBA Stats**  
 
-NBA Stats es un proyecto realizado con HTML, CSS y JavaScript. Recibe datos de [balldontlie](https://www.balldontlie.io/), que es una API que da acceso a datos sobre la [NBA](https://es.wikipedia.org/wiki/National_Basketball_Association) de baloncesto.
+NBA Stats es un proyecto realizado con HTML, CSS y JavaScript. Recibe datos de [balldontlie](https://www.balldontlie.io/), que es una API que da acceso a datos sobre la [NBA](https://es.wikipedia.org/wiki/National_Basketball_Association) de baloncesto entre los años 1979 y 2021, sobre jugadores, equipos y partidos.
 
 ## Consideraciones Iniciales:
 Para la elección de la API, se ha elegido esta porque dentro de las APIs proporcionadas y de contenido NBA, es la única con HTTPS y CORS adecuados. Después de una primera observación, el contenido de la misma sobre jugadores, equipos, estadísticas,... es apropiado para la realización del *Proyecto Final*.
@@ -42,6 +42,8 @@ Justo después de escribir el último párrafo, se me ha ocurrido que el usuario
 El último paso ha sido implementar la página de jugadores (player.html). El usuario puede llegar desde dos vías: desde la página de equipos, pinchando en el nombre de un jugador o desde el buscador. Si se llega desde la primera opción, utilizamos la información guardada en localStorage para ahorrar una llamada a la API. Si se obtiene una búsqueda desde el buscador, cuando se encuentra el jugador ya tendríamos la información (peso, altura, posición,...) del jugador y luego con el año, se llamaría a la API para obtener la información sobre partidos, puntos, asistencias... 
 
 Para imprimir por pantalla la primera información, se ha aprovechado el *template* que se usaba en la página de equipos. Si el tiempo lo permite, más adelante se podría evaluar si es posible meter esa información en un módulo. Para imprimir el segundo bloque de información se ha creado una tabla mediante un *template*. Si el jugador buscado, no ha jugado el año seleccionado, se imprimirá un mensaje por pantalla.  
+
+En estos últimos días, he estado intentando un pequeño error, ya que cuando se llega a player.html desde la pantalla de equipos, hay un pequeño instante que se ve el buscador. Se está probando a meter el buscador via template, desde un if que busca si hay información en el localStorage, pero de momento el addEventListener está dando un error que no sé detectar.  
 
 Con el tiempo que resta para la entrega, se da por finalizado el Proyecto Final. Estos últimos días los quiero dedicar a poner un poco de orden y a borrar cosas que finalmente no se han usado. También, ver si es posible aplicar un par de funciones a módulos. 
 

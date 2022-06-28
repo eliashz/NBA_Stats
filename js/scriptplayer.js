@@ -25,8 +25,8 @@ const showPlayerInfo = async (player, year=2021) => {
     let playerById = await fetchData(`https://www.balldontlie.io/api/v1/season_averages?season=${year}&player_ids[]=${player.id}`);
 
     if (playerById.data.length >= 1){
-        result.innerHTML = '';
-        document.querySelector('.buscador').innerHTML = '';
+        /* result.innerHTML = '';
+        document.querySelector('.buscador').innerHTML = ''; */
 
         const fragment = document.createDocumentFragment();
         const template = document.querySelector('#template-team').content;
@@ -101,23 +101,31 @@ const searchPlayer = async () => {
 }
 
 const playerFromTeamList = localStorage.getItem('playerSelected');
+console.log(playerFromTeamList)
 
 if (playerFromTeamList) { //Comprobación de que hay algo en el localStorage
     localStorage.removeItem('playerSelected');
     showPlayerInfo(JSON.parse(playerFromTeamList), 2021);
 } else { //Imprimir buscador
     const fragment = document.createDocumentFragment();
+    const template = document.querySelector("#template-buscador").content;
+
+    const buscadorDiv = template.cloneNode(true);
+
+    fragment.appendChild(buscadorDiv);
+
+    const header = document.querySelector('header');
+    header.appendChild(fragment);
+    
+    boton.addEventListener('click', searchPlayer);
+    document.body.addEventListener('keydown', pressEnter);
+
+    const pressEnter = (e) => { //Al pulsar enter realiza una búsqueda
+        if ((e.keyCode === 13) &&  (player.value.length > 2)){
+            searchPlayer();
+        }
+    }   
 }
-
-const pressEnter = (e) => { //Al pulsar enter realiza una búsqueda
-    if ((e.keyCode === 13) &&  (player.value.length > 2)){
-        searchPlayer();
-    }
-}
-
-boton.addEventListener('click', searchPlayer);
-document.body.addEventListener('keydown', pressEnter);
-
 const selectPlayer = (e) => {
     playerData.data.filter(player => {
         if (player.first_name + ' ' + player.last_name == e.target.textContent) {
