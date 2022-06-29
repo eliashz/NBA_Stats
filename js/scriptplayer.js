@@ -7,12 +7,6 @@ const result = document.querySelector('#result');
 
 let playerData;
 
-const selectYear = () => {
-    let x = document.getElementById("year").selectedIndex;
-    let y = document.getElementById("year").options;
-    return y[x].text;
-}
-
 const showTable = (content, tbody, tr) => {
     const td = document.createElement('td');
     
@@ -37,7 +31,7 @@ const showPlayerInfo = async (player, year=2021) => {
         playerDiv.querySelector('img').alt = player.team.full_name;
 
         playerDiv.querySelector('#team').innerHTML = player.first_name + ' ' + player.last_name;
-        playerDiv.querySelector('.name').textContent = `POSICION: ${player.position}`; 
+        playerDiv.querySelector('.name').textContent = `POSICION: ${player.position ? player.position : '-'}`; 
         playerDiv.querySelector('.position').textContent = `Altura: ${inchesToCm(player.height_feet, player.height_inches)} | Peso: ${poundsToKg(player.weight_pounds)}`
 
         fragment.appendChild(playerDiv);
@@ -115,6 +109,12 @@ const pressEnter = (e) => { //Al pulsar enter realiza una búsqueda
 
 boton.addEventListener('click', searchPlayer);
 document.body.addEventListener('keydown', pressEnter);
+
+const selectYear = () => {
+    let x = document.getElementById("year").selectedIndex;
+    let y = document.getElementById("year").options;
+    return y[x].text;
+}
 
 const selectPlayer = (e) => {
     playerData.data.filter(player => {

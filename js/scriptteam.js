@@ -61,7 +61,7 @@ do {
     teamPlayers.map(teamPlayer => {
         const tr = document.createElement('tr');
         showPlayerInfo(teamPlayer.first_name + ' ' + teamPlayer.last_name, tr);
-        showPlayerInfo(teamPlayer.position, tr);
+        showPlayerInfo(teamPlayer.position ? teamPlayer.position : '-', tr);
         showPlayerInfo(inchesToCm(teamPlayer.height_feet, teamPlayer.height_inches), tr)
         showPlayerInfo(poundsToKg(teamPlayer.weight_pounds), tr)
         print = !print;
