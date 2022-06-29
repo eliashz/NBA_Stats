@@ -28,7 +28,6 @@ const saveTeamID = (e) => { //Función que en base al nombre del png busca la ID
             id = id.slice(1)
         }
         localStorage.setItem('teamID', id);
-        console.log(id)
     }
 }    
 document.querySelectorAll('.shields')[0].addEventListener('click', saveTeamID);

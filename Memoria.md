@@ -10,7 +10,7 @@ El primer paso, basado en el ejemplo de la *Sesión Síncrona 3*, ha sido accede
 
 <img src="./markdown/primerdiseno.png" alt="drawing" width="400"/>  
 
-Más adelante, se ha empezado a trabajar con Flexbox para optimizar el diseño de la página y para acercarse más a un posible diseño final:  
+Más adelante, se ha empezado a trabajar con Flexbox para optimizar el diseño de la página y para acercarse más a un posible diseño final de lo que será el index.html:  
 
 <img src="./markdown/segundodiseno.png" alt="segundo" width="400"/>  
 
@@ -20,7 +20,9 @@ Con lo explicado en la *Sesión Síncrona 6*, se ha implementado un primer dise�
 
 <img src="./markdown/disenomem.png" alt="equipo" width="400"/>   
 
-Después de un tiempo sin avanzar el proyecto, he decidido reemprenderlo realizando una página con todos los logos de los equipos NBA (teams.html), divididos por conferencias. Una vez pinchando en el logo de un equipo, la idea era generar una tabla con los jugadores de ese equipo buscando en la API. Entonces ha surgido un problema, que habrá que evaluar para encontrar una posible solución o descartar la idea. Ya que la URL de jugadores está divida en 151 páginas con 25 jugadores por lo que las llamadas a la API con los awaits correspondientes retrasan demasiado la ejecución. Además, que la API solo permite 60 llamas al minuto, por lo que se me ha bloqueado. 
+Después de un tiempo sin avanzar el proyecto, he decidido reemprenderlo realizando una página con todos los logos de los equipos NBA (teams.html), divididos por conferencias. Mediante un template, al que se llama dos veces, imprime por pantalla los logos guardados en arrays. Despúes, el usuario podrá pincjar en el logo de un equipo y guardando la información de la ID del equipo (que coincide con la del png) en localStorage, la idea será generar un html nuevo con una tabla con los jugadores de ese equipo buscando en la API.  
+
+Entonces ha surgido un problema, que habrá que evaluar para encontrar una posible solución o descartar la idea. Ya que la URL de jugadores está divida en 151 páginas con 25 jugadores por lo que las llamadas a la API con los awaits correspondientes retrasan demasiado la ejecución. Además, que la API solo permite 60 llamas al minuto, por lo que se me ha bloqueado. 
 
 Finalmente, se ha llegado a la solución (gracias, Albert) de hacer llamadas a la API haciendo búsquedas de por 100 elementos. Otro de los problemas que ha surgido, es que la información de los jugadores en la API está dividida en dos. Por una parte, la API ofrece [información de los jugadores](https://www.balldontlie.io/api/v1/players) como el equipo en el que juegan, el peso, la altura o su posicion y por otro lado ofrece las [estadísticas de los jugadores](https://www.balldontlie.io/api/v1/stats). La idea era generar una tabla con toda esta información, pero al multiplicarse por dos las llamadas a la API se multlipicaría la latencia al generar las tablas.
 
@@ -29,8 +31,8 @@ La solución a la que se ha llegado, ha sido generar una tabla solo con la prime
 Se ha seguido el trabajo, generando esta página sobre jugadores. El primer paso, ha sido establecer un input y un botón para hacer un búsqueda de un determinado jugador por parte del usuario. Con la opción que ofrece la API para realizar búsquedas (?search=davis) dicha ejecución ha sido realmente sencilla, ya que ofrece unos resultados bastante óptimos. 
 
 Para los resultados de la búsqueda, se ha realizado un condicional con tres opciones:
-+ Jugador encontrado. Que llevará al usuario a la página del jugador con información del mismo.
-+ La búsqueda ofrece muchos jugadores, por la similaridad del nombre. Este resultado imprimirá una lista con los jugadores encontrados y el usuario puede seleccionar el que está buscando, al pinchar, se redireccionará a la página con información de dicho jugador.
++ Jugador encontrado: Que llevará al usuario a la página del jugador con información del mismo.
++ La búsqueda ofrece muchos jugadores, por la similaridad del nombre: Este resultado imprimirá una lista con los jugadores encontrados y el usuario puede seleccionar el que está buscando, al pinchar, se redireccionará a la página con información de dicho jugador.
 + Jugador no encontrado. Se imprime por pantalla dicho mensaje.  
 
 Debido a la limitación de las llamadas a la API y para corregir la latencia en la carga, se ha tomado la medida de poner unos límites dentro de la página. Después de un estudio la información, al entrar en la sección de equipos y hacer un búsqueda, se ofrecerán resultados de las últimas páginas de la API, que coincide con los jugadores que están en activo.  
