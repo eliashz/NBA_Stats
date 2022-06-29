@@ -26,7 +26,9 @@ Entonces ha surgido un problema, que habrá que evaluar para encontrar una posib
 
 Finalmente, se ha llegado a la solución (gracias, Albert) de hacer llamadas a la API haciendo búsquedas de por 100 elementos. Otro de los problemas que ha surgido, es que la información de los jugadores en la API está dividida en dos. Por una parte, la API ofrece [información de los jugadores](https://www.balldontlie.io/api/v1/players) como el equipo en el que juegan, el peso, la altura o su posicion y por otro lado ofrece las [estadísticas de los jugadores](https://www.balldontlie.io/api/v1/stats). La idea era generar una tabla con toda esta información, pero al multiplicarse por dos las llamadas a la API se multlipicaría la latencia al generar las tablas.
 
-La solución a la que se ha llegado, ha sido generar una tabla solo con la primera información y crear un enlace en el nombre del jugador, que al pinchar, llevaría a una página con información más extensa sobre el jugador (player.html), ya con todos los datos de las dos llamadas a la API. 
+La solución a la que se ha llegado, ha sido generar una tabla solo con la primera información y crear un enlace en el nombre del jugador, que al pinchar, llevaría a una página con información más extensa sobre el jugador (player.html), ya con todos los datos de las dos llamadas a la API.  
+
+Llegado a este punto se han implementado dos módulos: uno para las llamadas a la API con fetch y otro que transforma la altura y el peso a sistema métrico.  
 
 Se ha seguido el trabajo, generando esta página sobre jugadores. El primer paso, ha sido establecer un input y un botón para hacer un búsqueda de un determinado jugador por parte del usuario. Con la opción que ofrece la API para realizar búsquedas (?search=davis) dicha ejecución ha sido realmente sencilla, ya que ofrece unos resultados bastante óptimos. 
 
@@ -39,7 +41,7 @@ Debido a la limitación de las llamadas a la API y para corregir la latencia en 
 
 Otra limitación que se ha puesto, ya que la información sobre estadísticas está dividida por años, es limitar la información entregada al último año jugado por ese jugador y limitar la información hasta el año 2000. Ya que si hacemos la búsqueda de un jugador que si último año fue en 1980 y empezamos a buscar desde el año 2021, tendríamos que hacer 41 llamadas a la API para obtener ese resultado, por lo que casi se estaría llegando al límites puesto por la API.  
 
-Justo después de escribir el último párrafo, se me ha ocurrido que el usuario pueda seleccionar el año del que desea ver las estadísticas del jugador. Así que he creado un *form* para que se pueda seleccionar dentro de los años 1979 a 2020. Así se limitan las llamadas a la API. Habrá que considerar más tarde, si una vez dentro de la página del jugador, el usuario podrá seleccionar otro año y así que se vaya añadiendo a la tabla que se creará.  
+Justo después de escribir el último párrafo, se me ha ocurrido que el usuario pueda seleccionar el año del que desea ver las estadísticas del jugador. Así que he creado un *form* para que se pueda seleccionar dentro de los años 1979 a 2021. Así se limitan las llamadas a la API. Habrá que considerar más tarde, si una vez dentro de la página del jugador, el usuario podrá seleccionar otro año y así que se vaya añadiendo a la tabla que se creará.  
 
 El último paso ha sido implementar la página de jugadores (player.html). El usuario puede llegar desde dos vías: desde la página de equipos, pinchando en el nombre de un jugador o desde el buscador. Si se llega desde la primera opción, utilizamos la información guardada en localStorage para ahorrar una llamada a la API. Si se obtiene una búsqueda desde el buscador, cuando se encuentra el jugador ya tendríamos la información (peso, altura, posición,...) del jugador y luego con el año, se llamaría a la API para obtener la información sobre partidos, puntos, asistencias... 
 
@@ -53,6 +55,10 @@ Con el tiempo que resta para la entrega, se da por finalizado el Proyecto Final.
 
 ## Consideraciones finales y desarrollo futuro:  
 El desarrollo de la aplicación ha estado marcada por las limitaciones que exigía la API, ya que sin estas limitaciones se podría haber ido más allá en el desarrollo de la misma. Uno de los objetivos para un futuro sería encontrar la manera de ofrecer más información teniendo en cuenta está limitación.  
+
+Para un futuro inmediato se ha de corregir el error de que se vea el buscador viniendo de la página de equipos.  
+
+Otro error que hay que corregir y que no he sabido detectar, es que los textos de la barra de menú se mueven cuando se pasa de la página de inicio a la de equipos. También, cuando se termina de imprimir la tabla con los jugadores del equipo se ve ese leve movimiento en la barra de menú. En las investigaciones que he hecho, creo que puede ser al llamar al template, pero lo cierto es que no lo tengo nada claro.  
 
 Un de las vías para un desarrollo futuro, sería la de trabajar con la información sobre partidos. Habría que analizar de que manera se podría realizar este trato de esta información ya que la parte sobre partidos de esta API es un poco difusa.   
 
