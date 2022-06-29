@@ -33,7 +33,7 @@ Se ha seguido el trabajo, generando esta página sobre jugadores. El primer paso
 Para los resultados de la búsqueda, se ha realizado un condicional con tres opciones:
 + Jugador encontrado: Que llevará al usuario a la página del jugador con información del mismo.
 + La búsqueda ofrece muchos jugadores, por la similaridad del nombre: Este resultado imprimirá una lista con los jugadores encontrados y el usuario puede seleccionar el que está buscando, al pinchar, se redireccionará a la página con información de dicho jugador.
-+ Jugador no encontrado. Se imprime por pantalla dicho mensaje.  
++ Jugador no encontrado: Se imprime por pantalla dicho mensaje.  
 
 Debido a la limitación de las llamadas a la API y para corregir la latencia en la carga, se ha tomado la medida de poner unos límites dentro de la página. Después de un estudio la información, al entrar en la sección de equipos y hacer un búsqueda, se ofrecerán resultados de las últimas páginas de la API, que coincide con los jugadores que están en activo.  
 

@@ -28,7 +28,7 @@ const showTeamInfo = () => {
 }
 showTeamInfo()
 
-let page = 32;
+let page = 31;
 let print = true; 
 let allTeamPlayers = [];
 
@@ -68,7 +68,7 @@ do {
         enlace = true;
     })
     page++
-} while (page <= 38)
+} while (page <= 39)
 
 /**
  * Al seleccionar un jugador de la tabla, se guarda en localStorage 

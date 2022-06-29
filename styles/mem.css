@@ -164,7 +164,7 @@ div.player {
 }
 
 .number {
-    font-size: 1em;
+    font-size: 1.5em;
     color: #ffffff;
     background-color: #1d428a;
     padding: 5px 15px;
@@ -203,8 +203,9 @@ div.team {
 /* Player */
 #result {
     width: 40%;
-    margin: 1em auto 0 auto;
+    margin: 1em auto 2em auto;
     text-align: center;
+
 }
 
 .playerName {
