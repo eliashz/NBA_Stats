@@ -186,17 +186,6 @@ a:hover{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         text-align: center;
-    }
-
-    .navbar .container {
-        display: flex;
-        flex-direction: row;
-        font-size: small;
-    } 
-    .navbar .logo {
-        font-size: large; 
-        font-weight: bold;
-    }
-    
+    }   
 
 }
