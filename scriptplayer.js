@@ -1,5 +1,5 @@
-import { fetchData } from "../modules/fetchData.js";
-import { inchesToCm, poundsToKg } from "../modules/weightHeight.js";
+import { fetchData } from "./dist/modules/fetchData.js";
+import { inchesToCm, poundsToKg } from "./dist/modules/weightHeight.js";
 
 const player = document.querySelector('#text');
 const boton = document.querySelector('#boton');
