@@ -1,0 +1,266 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Didact Gothic', sans-serif;
+    background: #1d428a;
+    color: #ffffff;
+    font-size: 16p;
+    line-height: 1.5;
+}
+
+.buscador {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 50px;
+    width: 80%;
+    margin: 2em auto 0 auto;
+    margin-top: 40px;
+    padding: 10px;
+}
+
+.buscador input  {
+    color: #ffffff;
+    background: #1d428a;
+    border: 1px solid #ffffff;
+    padding: 5px 50px 5px 5px;
+    outline: none;
+}
+
+.buscador button {
+    color: #ffffff;
+    background: #1d428a;
+    border: 1px solid #ffffff;
+    padding: 8.5px 10px 5.8px 10px;
+    font-size: 0.8em;
+    font-weight: 100;
+}
+
+select {
+    color: #ffffff;
+    background: #1d428a;
+    border: 1px solid #ffffff;
+    outline: none;
+    padding: 2px 10px;
+}
+
+#form {
+    padding: 10px 1px 5px 10px;
+}
+
+input::placeholder {
+    color: #ffffff;
+    font-size: 0.9em;
+    font-weight: 100;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1, h2 {
+    margin-bottom: 15px;
+    font-family: 'Battambang', cursive;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar {
+    background: #c8102e;
+    font-family: 'Battambang', cursive;
+    height: 85px;
+    border-bottom: #ffffff 15px solid;
+}
+
+.navbar .logo {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.navbar a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+} 
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} 
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar ul li {
+    margin-left: 10px;
+}
+
+span {
+    font-family: 'Satisfy', cursive;
+    color: transparent;
+    font-size: 1.3em;
+    -webkit-text-stroke: 0.1px #ffffff;
+}
+
+footer {
+    margin: 20px 100px 10px;
+    font-size: 0.7em;
+}
+
+footer p {
+    padding-top: 10px;
+    border-top: #ffffff solid 1px;
+    font-weight: 300;
+    text-align: center;
+}
+
+/* Player */
+div.players {
+    display: flex;
+    justify-content: center;
+    gap: 130px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+div.player {
+    width: 250px;
+    color: #5D76A9;
+    background-color: #ffffff;
+    border-radius: 5%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.name {
+    font-size: 1.2em; 
+}
+
+.position {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: normal;
+}
+
+.number {
+    font-size: 1.5em;
+    color: #ffffff;
+    background-color: #1d428a;
+    padding: 5px 15px;
+    border-radius: 5%;
+}
+
+/* Team */
+div.teams {
+    font-family: 'Battambang', cursive;
+    display: flex;
+    justify-content: center;
+    gap: 130px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+div.team {
+    width: 1000px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+#team {
+    text-transform: uppercase;
+    font-size: 2.5em;
+}
+
+.team h1 {
+    letter-spacing: 0.1em;
+    font-weight: bold;
+}
+
+/* Player */
+#result {
+    width: 40%;
+    margin: 1em auto 2em auto;
+    text-align: center;
+
+}
+
+.playerName {
+    cursor: pointer;
+}
+
+/* Players table */
+table {
+    font-family: sans-serif;
+    text-align: center;
+    border-collapse: collapse;
+    width: 40%;
+    margin: 50px auto;
+    
+}
+
+thead {
+    background-color: #ffffff;
+    color:#5D76A9;
+    font-family: 'Battambang', cursive;
+    font-size: 0.9em;
+}
+
+th, td {
+    padding: 2px 20px;
+    font-size: 0.8em;
+}
+
+.colorTable {
+    background-color: #ffffff22;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffffffcc;
+}
+
+button:hover {
+    color: #ffffffcc;
+    border: 1px solid #ffffffcc;
+}
+
+@media(max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        padding-top: 20px;
+        text-align: center;
+    }
+
+    .boxes .container {
+        display: block;
+        text-align: center;
+    }
+}
