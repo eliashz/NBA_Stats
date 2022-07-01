@@ -1,5 +1,5 @@
-import { fetchData } from "../modules/fetchData.js";
-import { inchesToCm, poundsToKg } from "../modules/weightHeight.js";
+import { fetchData } from "./modules/fetchData.js";
+import { inchesToCm, poundsToKg } from "./modules/weightHeight.js";
 
 const teamID = localStorage.getItem('teamID');
 
