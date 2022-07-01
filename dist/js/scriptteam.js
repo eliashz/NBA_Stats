@@ -13,7 +13,7 @@ const showTeamInfo = () => {
 
     const teamDiv = template.cloneNode(true);
 
-    teamDiv.querySelector('img').src += `dist/img/${teamID}.png`; //Insercion de la imagen del logo
+    teamDiv.querySelector('img').src += `${teamID}.png`; //Insercion de la imagen del logo
     teamDiv.querySelector('img').alt = team[0].name;
 
     teamDiv.querySelector('#team').textContent = team[0].full_name;
@@ -28,7 +28,7 @@ const showTeamInfo = () => {
 }
 showTeamInfo()
 
-let page = 31;
+let page = 37;
 let print = true; 
 let allTeamPlayers = [];
 
@@ -46,7 +46,7 @@ do {
         const td = document.createElement('td');
         if (enlace) { //Para que el enlace solo salga en la primera columna. 
             const a = document.createElement('a');
-            a.setAttribute('href', '/player.html');
+            a.setAttribute('href', './player.html');
             td.appendChild(a);
             a.textContent = content;
             enlace = false;
