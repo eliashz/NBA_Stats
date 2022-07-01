@@ -13,7 +13,7 @@ const showTeamInfo = () => {
 
     const teamDiv = template.cloneNode(true);
 
-    teamDiv.querySelector('img').src += `${teamID}.png`; //Insercion de la imagen del logo
+    teamDiv.querySelector('img').src += `dist/img/${teamID}.png`; //Insercion de la imagen del logo
     teamDiv.querySelector('img').alt = team[0].name;
 
     teamDiv.querySelector('#team').textContent = team[0].full_name;
