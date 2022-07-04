@@ -28,7 +28,7 @@ const showTeamInfo = () => {
 }
 showTeamInfo()
 
-let page = 37;
+let page = 31;
 let print = true; 
 let allTeamPlayers = [];
 
