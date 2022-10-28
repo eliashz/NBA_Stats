@@ -123,3 +123,17 @@ const selectPlayer = (e) => {
         }
     });
 }
+
+// Add years to DOM
+const writeYears = () => {
+    const year = document.getElementById('year');
+    for (let i = 2022; i >= 1979; i--) {
+        const option = document.createElement('option');
+        option.text = i;
+        option.value = i;
+        year.appendChild(option);
+        
+    }
+} 
+
+writeYears();
