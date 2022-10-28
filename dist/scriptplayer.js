@@ -15,7 +15,7 @@ const showTable = (content, tbody, tr) => {
     tbody.appendChild(tr);
 } 
 
-const showPlayerInfo = async (player, year=2021) => {
+const showPlayerInfo = async (player, year=2022) => {
     let playerById = await fetchData(`https://www.balldontlie.io/api/v1/season_averages?season=${year}&player_ids[]=${player.id}`);
 
     if (playerById.data.length >= 1){
@@ -98,7 +98,7 @@ const playerFromTeamList = localStorage.getItem('playerSelected');
 
 if (playerFromTeamList) { //Comprobación de que hay algo en el localStorage
     localStorage.removeItem('playerSelected');
-    showPlayerInfo(JSON.parse(playerFromTeamList), 2021);
+    showPlayerInfo(JSON.parse(playerFromTeamList), 2022);
 }
 
 const pressEnter = (e) => { //Al pulsar enter realiza una búsqueda
